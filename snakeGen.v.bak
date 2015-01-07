@@ -1,0 +1,33 @@
+module snakeCtrl (
+	input clk,
+	input reset,
+	input btnUp,
+	input btnDown,
+	input btnLeft,
+	input btnRight,
+	input foodX,
+	input foodY
+);
+
+reg [3:0] x, y;
+wire [7:0] pos = {x, y};
+
+snakeMove move (
+	.clk(clk),
+	.reset(reset),
+	.btnUp(btnUp),
+	.btnDown(btnDown),
+	.btnLeft(btnLeft),
+	.btnRight(btnRight),
+	.x(x),
+	.y(y)
+);
+
+fifo body (
+	.aclr(reset),
+	.clock(clk),
+	.data(pos)
+);
+
+
+endmodule

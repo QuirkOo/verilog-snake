@@ -1,0 +1,722 @@
+Analysis & Synthesis report for mg7sm
+Fri Jan 02 21:40:32 2015
+Quartus II Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Analysis & Synthesis Source Files Read
+  5. Analysis & Synthesis Resource Usage Summary
+  6. Analysis & Synthesis Resource Utilization by Entity
+  7. Analysis & Synthesis RAM Summary
+  8. State Machine - |mg7sm|scfifo:mgl_prim1|A_I2FIFO:subfifo|IM_FEEDS_WHO
+  9. State Machine - |mg7sm|scfifo:mgl_prim1|A_I2FIFO:subfifo|READ_WHERE
+ 10. State Machine - |mg7sm|scfifo:mgl_prim1|A_I2FIFO:subfifo|WRITE_WHERE
+ 11. State Machine - |mg7sm|scfifo:mgl_prim1|A_I2FIFO:subfifo|a_fefifo:FEF|sm_emptyfull
+ 12. State Machine - |mg7sm|scfifo:mgl_prim1|A_I2FIFO:subfifo|a_imfifo:IMF|a_fefifo:fifo_state|sm_emptyfull
+ 13. Registers Removed During Synthesis
+ 14. General Register Statistics
+ 15. Source assignments for scfifo:mgl_prim1|a_i2fifo:subfifo|a_imfifo:IMF|lpm_counter:wr_ptr
+ 16. Source assignments for scfifo:mgl_prim1|a_i2fifo:subfifo|a_imfifo:IMF|lpm_counter:rd_ptr
+ 17. Source assignments for scfifo:mgl_prim1|a_i2fifo:subfifo|a_imfifo:IMF|a_fefifo:fifo_state|lpm_counter:$00003
+ 18. Source assignments for scfifo:mgl_prim1|a_i2fifo:subfifo|a_imfifo:IMF|lpm_add_sub:$00008|addcore:adder
+ 19. Source assignments for scfifo:mgl_prim1|a_i2fifo:subfifo|a_imfifo:IMF|dffpipe:$00010
+ 20. Source assignments for scfifo:mgl_prim1|a_i2fifo:subfifo|a_imfifo:IMF|dffpipe:$00014
+ 21. Source assignments for scfifo:mgl_prim1|a_i2fifo:subfifo|a_imfifo:IMF|dffpipe:$00018
+ 22. Source assignments for scfifo:mgl_prim1|a_i2fifo:subfifo|a_imfifo:IMF|dffpipe:$00020
+ 23. Source assignments for scfifo:mgl_prim1|a_i2fifo:subfifo|a_imfifo:IMF|dffpipe:$00022
+ 24. Source assignments for scfifo:mgl_prim1|a_i2fifo:subfifo|a_imfifo:IMF|dffpipe:$00024
+ 25. Source assignments for scfifo:mgl_prim1|a_i2fifo:subfifo|a_imfifo:IMF|dffpipe:$00027
+ 26. Source assignments for scfifo:mgl_prim1|a_i2fifo:subfifo|a_imfifo:IMF|dffpipe:$00029
+ 27. Source assignments for scfifo:mgl_prim1|a_i2fifo:subfifo|a_imfifo:IMF|dffpipe:$00031
+ 28. Source assignments for scfifo:mgl_prim1|a_i2fifo:subfifo|a_fefifo:FEF|lpm_counter:$00003
+ 29. Parameter Settings for User Entity Instance: scfifo:mgl_prim1
+ 30. scfifo Parameter Settings by Entity Instance
+ 31. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                               ;
++-----------------------------+----------------------------------------------+
+; Analysis & Synthesis Status ; Successful - Fri Jan 02 21:40:32 2015        ;
+; Quartus II Version          ; 9.0 Build 235 06/17/2009 SP 2 SJ Web Edition ;
+; Revision Name               ; mg7sm                                        ;
+; Top-level Entity Name       ; mg7sm                                        ;
+; Family                      ; FLEX10K                                      ;
+; Total logic elements        ; 266                                          ;
+; Total pins                  ; 29                                           ;
+; Total memory bits           ; 2,048                                        ;
++-----------------------------+----------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                               ;
++--------------------------------------------------------------+--------------+---------------+
+; Option                                                       ; Setting      ; Default Value ;
++--------------------------------------------------------------+--------------+---------------+
+; Top-level entity name                                        ; mg7sm        ; mg7sm         ;
+; Family name                                                  ; FLEX10K      ; Stratix II    ;
+; Use smart compilation                                        ; Off          ; Off           ;
+; Create Debugging Nodes for IP Cores                          ; Off          ; Off           ;
+; Preserve fewer node names                                    ; On           ; On            ;
+; Disable OpenCore Plus hardware evaluation                    ; Off          ; Off           ;
+; Verilog Version                                              ; Verilog_2001 ; Verilog_2001  ;
+; VHDL Version                                                 ; VHDL93       ; VHDL93        ;
+; State Machine Processing                                     ; Auto         ; Auto          ;
+; Safe State Machine                                           ; Off          ; Off           ;
+; Extract Verilog State Machines                               ; On           ; On            ;
+; Extract VHDL State Machines                                  ; On           ; On            ;
+; Ignore Verilog initial constructs                            ; Off          ; Off           ;
+; Iteration limit for constant Verilog loops                   ; 5000         ; 5000          ;
+; Iteration limit for non-constant Verilog loops               ; 250          ; 250           ;
+; Add Pass-Through Logic to Inferred RAMs                      ; On           ; On            ;
+; Parallel Synthesis                                           ; Off          ; Off           ;
+; NOT Gate Push-Back                                           ; On           ; On            ;
+; Power-Up Don't Care                                          ; On           ; On            ;
+; Remove Redundant Logic Cells                                 ; Off          ; Off           ;
+; Remove Duplicate Registers                                   ; On           ; On            ;
+; Ignore CARRY Buffers                                         ; Off          ; Off           ;
+; Ignore CASCADE Buffers                                       ; Off          ; Off           ;
+; Ignore GLOBAL Buffers                                        ; Off          ; Off           ;
+; Ignore ROW GLOBAL Buffers                                    ; Off          ; Off           ;
+; Ignore LCELL Buffers                                         ; Off          ; Off           ;
+; Ignore SOFT Buffers                                          ; On           ; On            ;
+; Limit AHDL Integers to 32 Bits                               ; Off          ; Off           ;
+; Auto Implement in ROM                                        ; Off          ; Off           ;
+; Optimization Technique                                       ; Area         ; Area          ;
+; Carry Chain Length                                           ; 32           ; 32            ;
+; Cascade Chain Length                                         ; 2            ; 2             ;
+; Auto Carry Chains                                            ; On           ; On            ;
+; Auto Open-Drain Pins                                         ; On           ; On            ;
+; Auto ROM Replacement                                         ; On           ; On            ;
+; Auto RAM Replacement                                         ; On           ; On            ;
+; Auto Clock Enable Replacement                                ; On           ; On            ;
+; Strict RAM Replacement                                       ; Off          ; Off           ;
+; Auto Resource Sharing                                        ; Off          ; Off           ;
+; Allow Any RAM Size For Recognition                           ; Off          ; Off           ;
+; Allow Any ROM Size For Recognition                           ; Off          ; Off           ;
+; Use LogicLock Constraints during Resource Balancing          ; On           ; On            ;
+; Ignore translate_off and synthesis_off directives            ; Off          ; Off           ;
+; Show Parameter Settings Tables in Synthesis Report           ; On           ; On            ;
+; HDL message level                                            ; Level2       ; Level2        ;
+; Suppress Register Optimization Related Messages              ; Off          ; Off           ;
+; Number of Removed Registers Reported in Synthesis Report     ; 100          ; 100           ;
+; Number of Inverted Registers Reported in Synthesis Report    ; 100          ; 100           ;
+; Block Design Naming                                          ; Auto         ; Auto          ;
+; Synthesis Effort                                             ; Auto         ; Auto          ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal ; On           ; On            ;
+; Analysis & Synthesis Message Level                           ; Medium       ; Medium        ;
++--------------------------------------------------------------+--------------+---------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                      ;
++--------------------------------------------------------+-----------------+------------------------+-------------------------------------------------------------------------+
+; File Name with User-Entered Path                       ; Used in Netlist ; File Type              ; File Name with Absolute Path                                            ;
++--------------------------------------------------------+-----------------+------------------------+-------------------------------------------------------------------------+
+; D:/Beatka/AGH/TC/snake/greybox_tmp/greybox_tmp/mg7sm.v ; yes             ; User Verilog HDL File  ; D:/Beatka/AGH/TC/snake/greybox_tmp/greybox_tmp/mg7sm.v                  ;
+; scfifo.tdf                                             ; yes             ; Megafunction           ; c:/altera/90sp2/quartus/libraries/megafunctions/scfifo.tdf              ;
+; a_regfifo.inc                                          ; yes             ; Megafunction           ; c:/altera/90sp2/quartus/libraries/megafunctions/a_regfifo.inc           ;
+; a_dpfifo.inc                                           ; yes             ; Megafunction           ; c:/altera/90sp2/quartus/libraries/megafunctions/a_dpfifo.inc            ;
+; a_i2fifo.inc                                           ; yes             ; Megafunction           ; c:/altera/90sp2/quartus/libraries/megafunctions/a_i2fifo.inc            ;
+; a_fffifo.inc                                           ; yes             ; Megafunction           ; c:/altera/90sp2/quartus/libraries/megafunctions/a_fffifo.inc            ;
+; a_f2fifo.inc                                           ; yes             ; Megafunction           ; c:/altera/90sp2/quartus/libraries/megafunctions/a_f2fifo.inc            ;
+; aglobal90.inc                                          ; yes             ; Megafunction           ; c:/altera/90sp2/quartus/libraries/megafunctions/aglobal90.inc           ;
+; a_i2fifo.tdf                                           ; yes             ; Megafunction           ; c:/altera/90sp2/quartus/libraries/megafunctions/a_i2fifo.tdf            ;
+; a_imfifo.inc                                           ; yes             ; Megafunction           ; c:/altera/90sp2/quartus/libraries/megafunctions/a_imfifo.inc            ;
+; a_fefifo.inc                                           ; yes             ; Megafunction           ; c:/altera/90sp2/quartus/libraries/megafunctions/a_fefifo.inc            ;
+; a_imfifo.tdf                                           ; yes             ; Megafunction           ; c:/altera/90sp2/quartus/libraries/megafunctions/a_imfifo.tdf            ;
+; lpm_counter.inc                                        ; yes             ; Megafunction           ; c:/altera/90sp2/quartus/libraries/megafunctions/lpm_counter.inc         ;
+; lpm_compare.inc                                        ; yes             ; Megafunction           ; c:/altera/90sp2/quartus/libraries/megafunctions/lpm_compare.inc         ;
+; lpm_add_sub.inc                                        ; yes             ; Megafunction           ; c:/altera/90sp2/quartus/libraries/megafunctions/lpm_add_sub.inc         ;
+; lpm_or.inc                                             ; yes             ; Megafunction           ; c:/altera/90sp2/quartus/libraries/megafunctions/lpm_or.inc              ;
+; altram.inc                                             ; yes             ; Megafunction           ; c:/altera/90sp2/quartus/libraries/megafunctions/altram.inc              ;
+; busmux.inc                                             ; yes             ; Megafunction           ; c:/altera/90sp2/quartus/libraries/megafunctions/busmux.inc              ;
+; dffpipe.inc                                            ; yes             ; Megafunction           ; c:/altera/90sp2/quartus/libraries/megafunctions/dffpipe.inc             ;
+; altram.tdf                                             ; yes             ; Megafunction           ; c:/altera/90sp2/quartus/libraries/megafunctions/altram.tdf              ;
+; memmodes.inc                                           ; yes             ; Megafunction           ; c:/altera/90sp2/quartus/libraries/others/maxplus2/memmodes.inc          ;
+; lpm_decode.inc                                         ; yes             ; Megafunction           ; c:/altera/90sp2/quartus/libraries/megafunctions/lpm_decode.inc          ;
+; lpm_mux.inc                                            ; yes             ; Megafunction           ; c:/altera/90sp2/quartus/libraries/megafunctions/lpm_mux.inc             ;
+; altsyncram.inc                                         ; yes             ; Megafunction           ; c:/altera/90sp2/quartus/libraries/megafunctions/altsyncram.inc          ;
+; altqpram.inc                                           ; yes             ; Megafunction           ; c:/altera/90sp2/quartus/libraries/megafunctions/altqpram.inc            ;
+; lpm_counter.tdf                                        ; yes             ; Megafunction           ; c:/altera/90sp2/quartus/libraries/megafunctions/lpm_counter.tdf         ;
+; lpm_constant.inc                                       ; yes             ; Megafunction           ; c:/altera/90sp2/quartus/libraries/megafunctions/lpm_constant.inc        ;
+; cmpconst.inc                                           ; yes             ; Megafunction           ; c:/altera/90sp2/quartus/libraries/megafunctions/cmpconst.inc            ;
+; dffeea.inc                                             ; yes             ; Megafunction           ; c:/altera/90sp2/quartus/libraries/megafunctions/dffeea.inc              ;
+; alt_synch_counter.inc                                  ; yes             ; Megafunction           ; c:/altera/90sp2/quartus/libraries/megafunctions/alt_synch_counter.inc   ;
+; alt_synch_counter_f.inc                                ; yes             ; Megafunction           ; c:/altera/90sp2/quartus/libraries/megafunctions/alt_synch_counter_f.inc ;
+; alt_counter_f10ke.inc                                  ; yes             ; Megafunction           ; c:/altera/90sp2/quartus/libraries/megafunctions/alt_counter_f10ke.inc   ;
+; alt_counter_stratix.inc                                ; yes             ; Megafunction           ; c:/altera/90sp2/quartus/libraries/megafunctions/alt_counter_stratix.inc ;
+; alt_counter_f10ke.tdf                                  ; yes             ; Megafunction           ; c:/altera/90sp2/quartus/libraries/megafunctions/alt_counter_f10ke.tdf   ;
+; flex10ke_lcell.inc                                     ; yes             ; Megafunction           ; c:/altera/90sp2/quartus/libraries/megafunctions/flex10ke_lcell.inc      ;
+; busmux.tdf                                             ; yes             ; Megafunction           ; c:/altera/90sp2/quartus/libraries/megafunctions/busmux.tdf              ;
+; lpm_mux.tdf                                            ; yes             ; Megafunction           ; c:/altera/90sp2/quartus/libraries/megafunctions/lpm_mux.tdf             ;
+; muxlut.inc                                             ; yes             ; Megafunction           ; c:/altera/90sp2/quartus/libraries/megafunctions/muxlut.inc              ;
+; bypassff.inc                                           ; yes             ; Megafunction           ; c:/altera/90sp2/quartus/libraries/megafunctions/bypassff.inc            ;
+; altshift.inc                                           ; yes             ; Megafunction           ; c:/altera/90sp2/quartus/libraries/megafunctions/altshift.inc            ;
+; altshift.tdf                                           ; yes             ; Megafunction           ; c:/altera/90sp2/quartus/libraries/megafunctions/altshift.tdf            ;
+; muxlut.tdf                                             ; yes             ; Megafunction           ; c:/altera/90sp2/quartus/libraries/megafunctions/muxlut.tdf              ;
+; a_fefifo.tdf                                           ; yes             ; Megafunction           ; c:/altera/90sp2/quartus/libraries/megafunctions/a_fefifo.tdf            ;
+; lpm_compare.tdf                                        ; yes             ; Megafunction           ; c:/altera/90sp2/quartus/libraries/megafunctions/lpm_compare.tdf         ;
+; comptree.inc                                           ; yes             ; Megafunction           ; c:/altera/90sp2/quartus/libraries/megafunctions/comptree.inc            ;
+; comptree.tdf                                           ; yes             ; Megafunction           ; c:/altera/90sp2/quartus/libraries/megafunctions/comptree.tdf            ;
+; cmpchain.inc                                           ; yes             ; Megafunction           ; c:/altera/90sp2/quartus/libraries/megafunctions/cmpchain.inc            ;
+; cmpchain.tdf                                           ; yes             ; Megafunction           ; c:/altera/90sp2/quartus/libraries/megafunctions/cmpchain.tdf            ;
+; lpm_add_sub.tdf                                        ; yes             ; Megafunction           ; c:/altera/90sp2/quartus/libraries/megafunctions/lpm_add_sub.tdf         ;
+; addcore.inc                                            ; yes             ; Megafunction           ; c:/altera/90sp2/quartus/libraries/megafunctions/addcore.inc             ;
+; look_add.inc                                           ; yes             ; Megafunction           ; c:/altera/90sp2/quartus/libraries/megafunctions/look_add.inc            ;
+; alt_stratix_add_sub.inc                                ; yes             ; Megafunction           ; c:/altera/90sp2/quartus/libraries/megafunctions/alt_stratix_add_sub.inc ;
+; alt_mercury_add_sub.inc                                ; yes             ; Megafunction           ; c:/altera/90sp2/quartus/libraries/megafunctions/alt_mercury_add_sub.inc ;
+; addcore.tdf                                            ; yes             ; Megafunction           ; c:/altera/90sp2/quartus/libraries/megafunctions/addcore.tdf             ;
+; a_csnbuffer.inc                                        ; yes             ; Megafunction           ; c:/altera/90sp2/quartus/libraries/megafunctions/a_csnbuffer.inc         ;
+; a_csnbuffer.tdf                                        ; yes             ; Megafunction           ; c:/altera/90sp2/quartus/libraries/megafunctions/a_csnbuffer.tdf         ;
+; dffpipe.tdf                                            ; yes             ; Megafunction           ; c:/altera/90sp2/quartus/libraries/megafunctions/dffpipe.tdf             ;
+; lpm_or.tdf                                             ; yes             ; Megafunction           ; c:/altera/90sp2/quartus/libraries/megafunctions/lpm_or.tdf              ;
+; a_f2fifo.tdf                                           ; yes             ; Megafunction           ; c:/altera/90sp2/quartus/libraries/megafunctions/a_f2fifo.tdf            ;
+; lpm_ff.inc                                             ; yes             ; Megafunction           ; c:/altera/90sp2/quartus/libraries/megafunctions/lpm_ff.inc              ;
+; a_mxfifo.inc                                           ; yes             ; Megafunction           ; c:/altera/90sp2/quartus/libraries/megafunctions/a_mxfifo.inc            ;
+; lpm_ff.tdf                                             ; yes             ; Megafunction           ; c:/altera/90sp2/quartus/libraries/megafunctions/lpm_ff.tdf              ;
++--------------------------------------------------------+-----------------+------------------------+-------------------------------------------------------------------------+
+
+
++---------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary ;
++-----------------------------------+---------+
+; Resource                          ; Usage   ;
++-----------------------------------+---------+
+; Total logic elements              ; 266     ;
+; Total combinational functions     ; 235     ;
+;     -- Total 4-input functions    ; 75      ;
+;     -- Total 3-input functions    ; 96      ;
+;     -- Total 2-input functions    ; 39      ;
+;     -- Total 1-input functions    ; 24      ;
+;     -- Total 0-input functions    ; 1       ;
+; Total registers                   ; 173     ;
+; Total logic cells in carry chains ; 39      ;
+; I/O pins                          ; 29      ;
+; Total memory bits                 ; 2048    ;
+; Maximum fan-out node              ; clock   ;
+; Maximum fan-out                   ; 189     ;
+; Total fan-out                     ; 1201    ;
+; Average fan-out                   ; 3.86    ;
++-----------------------------------+---------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                                                                                  ;
++------------------------------------------------------+-------------+--------------+-------------+------+--------------+-------------------+------------------+-----------------+------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                           ; Logic Cells ; LC Registers ; Memory Bits ; Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                                                                                                                                                                                     ; Library Name ;
++------------------------------------------------------+-------------+--------------+-------------+------+--------------+-------------------+------------------+-----------------+------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; |mg7sm                                               ; 266 (1)     ; 173          ; 2048        ; 29   ; 93 (1)       ; 31 (0)            ; 142 (0)          ; 39 (0)          ; 0 (0)      ; |mg7sm                                                                                                                                                                                                  ; work         ;
+;    |scfifo:mgl_prim1|                                ; 265 (0)     ; 173          ; 2048        ; 0    ; 92 (0)       ; 31 (0)            ; 142 (0)          ; 39 (0)          ; 0 (0)      ; |mg7sm|scfifo:mgl_prim1                                                                                                                                                                                 ; work         ;
+;       |A_I2FIFO:subfifo|                             ; 265 (49)    ; 173          ; 2048        ; 0    ; 92 (34)      ; 31 (0)            ; 142 (15)         ; 39 (0)          ; 0 (0)      ; |mg7sm|scfifo:mgl_prim1|A_I2FIFO:subfifo                                                                                                                                                                ; work         ;
+;          |a_f2fifo:FF1|                              ; 42 (8)      ; 36           ; 0           ; 0    ; 6 (6)        ; 8 (0)             ; 28 (2)           ; 0 (0)           ; 0 (0)      ; |mg7sm|scfifo:mgl_prim1|A_I2FIFO:subfifo|a_f2fifo:FF1                                                                                                                                                   ; work         ;
+;             |lpm_ff:$00001|                          ; 8 (8)       ; 8            ; 0           ; 0    ; 0 (0)        ; 0 (0)             ; 8 (8)            ; 0 (0)           ; 0 (0)      ; |mg7sm|scfifo:mgl_prim1|A_I2FIFO:subfifo|a_f2fifo:FF1|lpm_ff:$00001                                                                                                                                     ; work         ;
+;             |lpm_ff:$00003|                          ; 8 (8)       ; 8            ; 0           ; 0    ; 0 (0)        ; 0 (0)             ; 8 (8)            ; 0 (0)           ; 0 (0)      ; |mg7sm|scfifo:mgl_prim1|A_I2FIFO:subfifo|a_f2fifo:FF1|lpm_ff:$00003                                                                                                                                     ; work         ;
+;             |lpm_ff:$00005|                          ; 8 (8)       ; 8            ; 0           ; 0    ; 0 (0)        ; 0 (0)             ; 8 (8)            ; 0 (0)           ; 0 (0)      ; |mg7sm|scfifo:mgl_prim1|A_I2FIFO:subfifo|a_f2fifo:FF1|lpm_ff:$00005                                                                                                                                     ; work         ;
+;             |lpm_ff:$00007|                          ; 8 (8)       ; 8            ; 0           ; 0    ; 0 (0)        ; 8 (8)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |mg7sm|scfifo:mgl_prim1|A_I2FIFO:subfifo|a_f2fifo:FF1|lpm_ff:$00007                                                                                                                                     ; work         ;
+;             |lpm_ff:$00011|                          ; 2 (2)       ; 2            ; 0           ; 0    ; 0 (0)        ; 0 (0)             ; 2 (2)            ; 0 (0)           ; 0 (0)      ; |mg7sm|scfifo:mgl_prim1|A_I2FIFO:subfifo|a_f2fifo:FF1|lpm_ff:$00011                                                                                                                                     ; work         ;
+;          |a_f2fifo:FF2|                              ; 42 (8)      ; 36           ; 0           ; 0    ; 6 (6)        ; 8 (0)             ; 28 (2)           ; 0 (0)           ; 0 (0)      ; |mg7sm|scfifo:mgl_prim1|A_I2FIFO:subfifo|a_f2fifo:FF2                                                                                                                                                   ; work         ;
+;             |lpm_ff:$00001|                          ; 8 (8)       ; 8            ; 0           ; 0    ; 0 (0)        ; 0 (0)             ; 8 (8)            ; 0 (0)           ; 0 (0)      ; |mg7sm|scfifo:mgl_prim1|A_I2FIFO:subfifo|a_f2fifo:FF2|lpm_ff:$00001                                                                                                                                     ; work         ;
+;             |lpm_ff:$00003|                          ; 8 (8)       ; 8            ; 0           ; 0    ; 0 (0)        ; 0 (0)             ; 8 (8)            ; 0 (0)           ; 0 (0)      ; |mg7sm|scfifo:mgl_prim1|A_I2FIFO:subfifo|a_f2fifo:FF2|lpm_ff:$00003                                                                                                                                     ; work         ;
+;             |lpm_ff:$00005|                          ; 8 (8)       ; 8            ; 0           ; 0    ; 0 (0)        ; 0 (0)             ; 8 (8)            ; 0 (0)           ; 0 (0)      ; |mg7sm|scfifo:mgl_prim1|A_I2FIFO:subfifo|a_f2fifo:FF2|lpm_ff:$00005                                                                                                                                     ; work         ;
+;             |lpm_ff:$00007|                          ; 8 (8)       ; 8            ; 0           ; 0    ; 0 (0)        ; 8 (8)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |mg7sm|scfifo:mgl_prim1|A_I2FIFO:subfifo|a_f2fifo:FF2|lpm_ff:$00007                                                                                                                                     ; work         ;
+;             |lpm_ff:$00011|                          ; 2 (2)       ; 2            ; 0           ; 0    ; 0 (0)        ; 0 (0)             ; 2 (2)            ; 0 (0)           ; 0 (0)      ; |mg7sm|scfifo:mgl_prim1|A_I2FIFO:subfifo|a_f2fifo:FF2|lpm_ff:$00011                                                                                                                                     ; work         ;
+;          |a_fefifo:FEF|                              ; 21 (7)      ; 11           ; 0           ; 0    ; 10 (4)       ; 0 (0)             ; 11 (3)           ; 8 (0)           ; 0 (0)      ; |mg7sm|scfifo:mgl_prim1|A_I2FIFO:subfifo|a_fefifo:FEF                                                                                                                                                   ; work         ;
+;             |lpm_compare:is_almost_empty_compare|    ; 3 (0)       ; 0            ; 0           ; 0    ; 3 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |mg7sm|scfifo:mgl_prim1|A_I2FIFO:subfifo|a_fefifo:FEF|lpm_compare:is_almost_empty_compare                                                                                                               ; work         ;
+;                |comptree:comparator|                 ; 3 (0)       ; 0            ; 0           ; 0    ; 3 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |mg7sm|scfifo:mgl_prim1|A_I2FIFO:subfifo|a_fefifo:FEF|lpm_compare:is_almost_empty_compare|comptree:comparator                                                                                           ; work         ;
+;                   |cmpchain:cmp_end|                 ; 3 (0)       ; 0            ; 0           ; 0    ; 3 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |mg7sm|scfifo:mgl_prim1|A_I2FIFO:subfifo|a_fefifo:FEF|lpm_compare:is_almost_empty_compare|comptree:comparator|cmpchain:cmp_end                                                                          ; work         ;
+;                      |comptree:comp|                 ; 3 (0)       ; 0            ; 0           ; 0    ; 3 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |mg7sm|scfifo:mgl_prim1|A_I2FIFO:subfifo|a_fefifo:FEF|lpm_compare:is_almost_empty_compare|comptree:comparator|cmpchain:cmp_end|comptree:comp                                                            ; work         ;
+;                         |cmpchain:cmp[0]|            ; 1 (1)       ; 0            ; 0           ; 0    ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |mg7sm|scfifo:mgl_prim1|A_I2FIFO:subfifo|a_fefifo:FEF|lpm_compare:is_almost_empty_compare|comptree:comparator|cmpchain:cmp_end|comptree:comp|cmpchain:cmp[0]                                            ; work         ;
+;                         |cmpchain:cmp[1]|            ; 1 (1)       ; 0            ; 0           ; 0    ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |mg7sm|scfifo:mgl_prim1|A_I2FIFO:subfifo|a_fefifo:FEF|lpm_compare:is_almost_empty_compare|comptree:comparator|cmpchain:cmp_end|comptree:comp|cmpchain:cmp[1]                                            ; work         ;
+;                         |comptree:sub_comptree|      ; 1 (0)       ; 0            ; 0           ; 0    ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |mg7sm|scfifo:mgl_prim1|A_I2FIFO:subfifo|a_fefifo:FEF|lpm_compare:is_almost_empty_compare|comptree:comparator|cmpchain:cmp_end|comptree:comp|comptree:sub_comptree                                      ; work         ;
+;                            |cmpchain:cmp_end|        ; 1 (1)       ; 0            ; 0           ; 0    ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |mg7sm|scfifo:mgl_prim1|A_I2FIFO:subfifo|a_fefifo:FEF|lpm_compare:is_almost_empty_compare|comptree:comparator|cmpchain:cmp_end|comptree:comp|comptree:sub_comptree|cmpchain:cmp_end                     ; work         ;
+;             |lpm_compare:is_almost_full_compare|     ; 3 (0)       ; 0            ; 0           ; 0    ; 3 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |mg7sm|scfifo:mgl_prim1|A_I2FIFO:subfifo|a_fefifo:FEF|lpm_compare:is_almost_full_compare                                                                                                                ; work         ;
+;                |comptree:comparator|                 ; 3 (0)       ; 0            ; 0           ; 0    ; 3 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |mg7sm|scfifo:mgl_prim1|A_I2FIFO:subfifo|a_fefifo:FEF|lpm_compare:is_almost_full_compare|comptree:comparator                                                                                            ; work         ;
+;                   |cmpchain:cmp_end|                 ; 3 (0)       ; 0            ; 0           ; 0    ; 3 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |mg7sm|scfifo:mgl_prim1|A_I2FIFO:subfifo|a_fefifo:FEF|lpm_compare:is_almost_full_compare|comptree:comparator|cmpchain:cmp_end                                                                           ; work         ;
+;                      |comptree:comp|                 ; 3 (0)       ; 0            ; 0           ; 0    ; 3 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |mg7sm|scfifo:mgl_prim1|A_I2FIFO:subfifo|a_fefifo:FEF|lpm_compare:is_almost_full_compare|comptree:comparator|cmpchain:cmp_end|comptree:comp                                                             ; work         ;
+;                         |cmpchain:cmp[0]|            ; 1 (1)       ; 0            ; 0           ; 0    ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |mg7sm|scfifo:mgl_prim1|A_I2FIFO:subfifo|a_fefifo:FEF|lpm_compare:is_almost_full_compare|comptree:comparator|cmpchain:cmp_end|comptree:comp|cmpchain:cmp[0]                                             ; work         ;
+;                         |cmpchain:cmp[1]|            ; 1 (1)       ; 0            ; 0           ; 0    ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |mg7sm|scfifo:mgl_prim1|A_I2FIFO:subfifo|a_fefifo:FEF|lpm_compare:is_almost_full_compare|comptree:comparator|cmpchain:cmp_end|comptree:comp|cmpchain:cmp[1]                                             ; work         ;
+;                         |comptree:sub_comptree|      ; 1 (0)       ; 0            ; 0           ; 0    ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |mg7sm|scfifo:mgl_prim1|A_I2FIFO:subfifo|a_fefifo:FEF|lpm_compare:is_almost_full_compare|comptree:comparator|cmpchain:cmp_end|comptree:comp|comptree:sub_comptree                                       ; work         ;
+;                            |cmpchain:cmp_end|        ; 1 (1)       ; 0            ; 0           ; 0    ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |mg7sm|scfifo:mgl_prim1|A_I2FIFO:subfifo|a_fefifo:FEF|lpm_compare:is_almost_full_compare|comptree:comparator|cmpchain:cmp_end|comptree:comp|comptree:sub_comptree|cmpchain:cmp_end                      ; work         ;
+;             |lpm_counter:$00003|                     ; 8 (0)       ; 8            ; 0           ; 0    ; 0 (0)        ; 0 (0)             ; 8 (0)            ; 8 (0)           ; 0 (0)      ; |mg7sm|scfifo:mgl_prim1|A_I2FIFO:subfifo|a_fefifo:FEF|lpm_counter:$00003                                                                                                                                ; work         ;
+;                |alt_counter_f10ke:wysi_counter|      ; 8 (8)       ; 8            ; 0           ; 0    ; 0 (0)        ; 0 (0)             ; 8 (8)            ; 8 (8)           ; 0 (0)      ; |mg7sm|scfifo:mgl_prim1|A_I2FIFO:subfifo|a_fefifo:FEF|lpm_counter:$00003|alt_counter_f10ke:wysi_counter                                                                                                 ; work         ;
+;          |a_imfifo:IMF|                              ; 111 (17)    ; 75           ; 2048        ; 0    ; 36 (1)       ; 15 (1)            ; 60 (15)          ; 31 (0)          ; 0 (0)      ; |mg7sm|scfifo:mgl_prim1|A_I2FIFO:subfifo|a_imfifo:IMF                                                                                                                                                   ; work         ;
+;             |a_fefifo:fifo_state|                    ; 23 (9)      ; 11           ; 0           ; 0    ; 12 (6)       ; 0 (0)             ; 11 (3)           ; 8 (0)           ; 0 (0)      ; |mg7sm|scfifo:mgl_prim1|A_I2FIFO:subfifo|a_imfifo:IMF|a_fefifo:fifo_state                                                                                                                               ; work         ;
+;                |lpm_compare:is_almost_empty_compare| ; 3 (0)       ; 0            ; 0           ; 0    ; 3 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |mg7sm|scfifo:mgl_prim1|A_I2FIFO:subfifo|a_imfifo:IMF|a_fefifo:fifo_state|lpm_compare:is_almost_empty_compare                                                                                           ; work         ;
+;                   |comptree:comparator|              ; 3 (0)       ; 0            ; 0           ; 0    ; 3 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |mg7sm|scfifo:mgl_prim1|A_I2FIFO:subfifo|a_imfifo:IMF|a_fefifo:fifo_state|lpm_compare:is_almost_empty_compare|comptree:comparator                                                                       ; work         ;
+;                      |cmpchain:cmp_end|              ; 3 (0)       ; 0            ; 0           ; 0    ; 3 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |mg7sm|scfifo:mgl_prim1|A_I2FIFO:subfifo|a_imfifo:IMF|a_fefifo:fifo_state|lpm_compare:is_almost_empty_compare|comptree:comparator|cmpchain:cmp_end                                                      ; work         ;
+;                         |comptree:comp|              ; 3 (0)       ; 0            ; 0           ; 0    ; 3 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |mg7sm|scfifo:mgl_prim1|A_I2FIFO:subfifo|a_imfifo:IMF|a_fefifo:fifo_state|lpm_compare:is_almost_empty_compare|comptree:comparator|cmpchain:cmp_end|comptree:comp                                        ; work         ;
+;                            |cmpchain:cmp[0]|         ; 1 (1)       ; 0            ; 0           ; 0    ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |mg7sm|scfifo:mgl_prim1|A_I2FIFO:subfifo|a_imfifo:IMF|a_fefifo:fifo_state|lpm_compare:is_almost_empty_compare|comptree:comparator|cmpchain:cmp_end|comptree:comp|cmpchain:cmp[0]                        ; work         ;
+;                            |cmpchain:cmp[1]|         ; 1 (1)       ; 0            ; 0           ; 0    ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |mg7sm|scfifo:mgl_prim1|A_I2FIFO:subfifo|a_imfifo:IMF|a_fefifo:fifo_state|lpm_compare:is_almost_empty_compare|comptree:comparator|cmpchain:cmp_end|comptree:comp|cmpchain:cmp[1]                        ; work         ;
+;                            |comptree:sub_comptree|   ; 1 (0)       ; 0            ; 0           ; 0    ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |mg7sm|scfifo:mgl_prim1|A_I2FIFO:subfifo|a_imfifo:IMF|a_fefifo:fifo_state|lpm_compare:is_almost_empty_compare|comptree:comparator|cmpchain:cmp_end|comptree:comp|comptree:sub_comptree                  ; work         ;
+;                               |cmpchain:cmp_end|     ; 1 (1)       ; 0            ; 0           ; 0    ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |mg7sm|scfifo:mgl_prim1|A_I2FIFO:subfifo|a_imfifo:IMF|a_fefifo:fifo_state|lpm_compare:is_almost_empty_compare|comptree:comparator|cmpchain:cmp_end|comptree:comp|comptree:sub_comptree|cmpchain:cmp_end ; work         ;
+;                |lpm_compare:is_almost_full_compare|  ; 3 (0)       ; 0            ; 0           ; 0    ; 3 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |mg7sm|scfifo:mgl_prim1|A_I2FIFO:subfifo|a_imfifo:IMF|a_fefifo:fifo_state|lpm_compare:is_almost_full_compare                                                                                            ; work         ;
+;                   |comptree:comparator|              ; 3 (0)       ; 0            ; 0           ; 0    ; 3 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |mg7sm|scfifo:mgl_prim1|A_I2FIFO:subfifo|a_imfifo:IMF|a_fefifo:fifo_state|lpm_compare:is_almost_full_compare|comptree:comparator                                                                        ; work         ;
+;                      |cmpchain:cmp_end|              ; 3 (0)       ; 0            ; 0           ; 0    ; 3 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |mg7sm|scfifo:mgl_prim1|A_I2FIFO:subfifo|a_imfifo:IMF|a_fefifo:fifo_state|lpm_compare:is_almost_full_compare|comptree:comparator|cmpchain:cmp_end                                                       ; work         ;
+;                         |comptree:comp|              ; 3 (0)       ; 0            ; 0           ; 0    ; 3 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |mg7sm|scfifo:mgl_prim1|A_I2FIFO:subfifo|a_imfifo:IMF|a_fefifo:fifo_state|lpm_compare:is_almost_full_compare|comptree:comparator|cmpchain:cmp_end|comptree:comp                                         ; work         ;
+;                            |cmpchain:cmp[0]|         ; 1 (1)       ; 0            ; 0           ; 0    ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |mg7sm|scfifo:mgl_prim1|A_I2FIFO:subfifo|a_imfifo:IMF|a_fefifo:fifo_state|lpm_compare:is_almost_full_compare|comptree:comparator|cmpchain:cmp_end|comptree:comp|cmpchain:cmp[0]                         ; work         ;
+;                            |cmpchain:cmp[1]|         ; 1 (1)       ; 0            ; 0           ; 0    ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |mg7sm|scfifo:mgl_prim1|A_I2FIFO:subfifo|a_imfifo:IMF|a_fefifo:fifo_state|lpm_compare:is_almost_full_compare|comptree:comparator|cmpchain:cmp_end|comptree:comp|cmpchain:cmp[1]                         ; work         ;
+;                            |comptree:sub_comptree|   ; 1 (0)       ; 0            ; 0           ; 0    ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |mg7sm|scfifo:mgl_prim1|A_I2FIFO:subfifo|a_imfifo:IMF|a_fefifo:fifo_state|lpm_compare:is_almost_full_compare|comptree:comparator|cmpchain:cmp_end|comptree:comp|comptree:sub_comptree                   ; work         ;
+;                               |cmpchain:cmp_end|     ; 1 (1)       ; 0            ; 0           ; 0    ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |mg7sm|scfifo:mgl_prim1|A_I2FIFO:subfifo|a_imfifo:IMF|a_fefifo:fifo_state|lpm_compare:is_almost_full_compare|comptree:comparator|cmpchain:cmp_end|comptree:comp|comptree:sub_comptree|cmpchain:cmp_end  ; work         ;
+;                |lpm_counter:$00003|                  ; 8 (0)       ; 8            ; 0           ; 0    ; 0 (0)        ; 0 (0)             ; 8 (0)            ; 8 (0)           ; 0 (0)      ; |mg7sm|scfifo:mgl_prim1|A_I2FIFO:subfifo|a_imfifo:IMF|a_fefifo:fifo_state|lpm_counter:$00003                                                                                                            ; work         ;
+;                   |alt_counter_f10ke:wysi_counter|   ; 8 (8)       ; 8            ; 0           ; 0    ; 0 (0)        ; 0 (0)             ; 8 (8)            ; 8 (8)           ; 0 (0)      ; |mg7sm|scfifo:mgl_prim1|A_I2FIFO:subfifo|a_imfifo:IMF|a_fefifo:fifo_state|lpm_counter:$00003|alt_counter_f10ke:wysi_counter                                                                             ; work         ;
+;             |altram:memory_block0|                   ; 0 (0)       ; 0            ; 1024        ; 0    ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |mg7sm|scfifo:mgl_prim1|A_I2FIFO:subfifo|a_imfifo:IMF|altram:memory_block0                                                                                                                              ; work         ;
+;             |altram:memory_block1|                   ; 0 (0)       ; 0            ; 1024        ; 0    ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |mg7sm|scfifo:mgl_prim1|A_I2FIFO:subfifo|a_imfifo:IMF|altram:memory_block1                                                                                                                              ; work         ;
+;             |busmux:data_out_mux|                    ; 16 (0)      ; 0            ; 0           ; 0    ; 16 (0)       ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |mg7sm|scfifo:mgl_prim1|A_I2FIFO:subfifo|a_imfifo:IMF|busmux:data_out_mux                                                                                                                               ; work         ;
+;                |lpm_mux:$00000|                      ; 16 (0)      ; 0            ; 0           ; 0    ; 16 (0)       ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |mg7sm|scfifo:mgl_prim1|A_I2FIFO:subfifo|a_imfifo:IMF|busmux:data_out_mux|lpm_mux:$00000                                                                                                                ; work         ;
+;                   |muxlut:$00009|                    ; 2 (2)       ; 0            ; 0           ; 0    ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |mg7sm|scfifo:mgl_prim1|A_I2FIFO:subfifo|a_imfifo:IMF|busmux:data_out_mux|lpm_mux:$00000|muxlut:$00009                                                                                                  ; work         ;
+;                   |muxlut:$00011|                    ; 2 (2)       ; 0            ; 0           ; 0    ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |mg7sm|scfifo:mgl_prim1|A_I2FIFO:subfifo|a_imfifo:IMF|busmux:data_out_mux|lpm_mux:$00000|muxlut:$00011                                                                                                  ; work         ;
+;                   |muxlut:$00013|                    ; 2 (2)       ; 0            ; 0           ; 0    ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |mg7sm|scfifo:mgl_prim1|A_I2FIFO:subfifo|a_imfifo:IMF|busmux:data_out_mux|lpm_mux:$00000|muxlut:$00013                                                                                                  ; work         ;
+;                   |muxlut:$00015|                    ; 2 (2)       ; 0            ; 0           ; 0    ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |mg7sm|scfifo:mgl_prim1|A_I2FIFO:subfifo|a_imfifo:IMF|busmux:data_out_mux|lpm_mux:$00000|muxlut:$00015                                                                                                  ; work         ;
+;                   |muxlut:$00017|                    ; 2 (2)       ; 0            ; 0           ; 0    ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |mg7sm|scfifo:mgl_prim1|A_I2FIFO:subfifo|a_imfifo:IMF|busmux:data_out_mux|lpm_mux:$00000|muxlut:$00017                                                                                                  ; work         ;
+;                   |muxlut:$00019|                    ; 2 (2)       ; 0            ; 0           ; 0    ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |mg7sm|scfifo:mgl_prim1|A_I2FIFO:subfifo|a_imfifo:IMF|busmux:data_out_mux|lpm_mux:$00000|muxlut:$00019                                                                                                  ; work         ;
+;                   |muxlut:$00021|                    ; 2 (2)       ; 0            ; 0           ; 0    ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |mg7sm|scfifo:mgl_prim1|A_I2FIFO:subfifo|a_imfifo:IMF|busmux:data_out_mux|lpm_mux:$00000|muxlut:$00021                                                                                                  ; work         ;
+;                   |muxlut:$00023|                    ; 2 (2)       ; 0            ; 0           ; 0    ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |mg7sm|scfifo:mgl_prim1|A_I2FIFO:subfifo|a_imfifo:IMF|busmux:data_out_mux|lpm_mux:$00000|muxlut:$00023                                                                                                  ; work         ;
+;             |dffpipe:$00010|                         ; 7 (7)       ; 7            ; 0           ; 0    ; 0 (0)        ; 0 (0)             ; 7 (7)            ; 0 (0)           ; 0 (0)      ; |mg7sm|scfifo:mgl_prim1|A_I2FIFO:subfifo|a_imfifo:IMF|dffpipe:$00010                                                                                                                                    ; work         ;
+;             |dffpipe:$00014|                         ; 7 (7)       ; 7            ; 0           ; 0    ; 0 (0)        ; 0 (0)             ; 7 (7)            ; 0 (0)           ; 0 (0)      ; |mg7sm|scfifo:mgl_prim1|A_I2FIFO:subfifo|a_imfifo:IMF|dffpipe:$00014                                                                                                                                    ; work         ;
+;             |dffpipe:$00018|                         ; 1 (1)       ; 1            ; 0           ; 0    ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |mg7sm|scfifo:mgl_prim1|A_I2FIFO:subfifo|a_imfifo:IMF|dffpipe:$00018                                                                                                                                    ; work         ;
+;             |dffpipe:$00020|                         ; 1 (1)       ; 1            ; 0           ; 0    ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |mg7sm|scfifo:mgl_prim1|A_I2FIFO:subfifo|a_imfifo:IMF|dffpipe:$00020                                                                                                                                    ; work         ;
+;             |dffpipe:$00022|                         ; 8 (8)       ; 8            ; 0           ; 0    ; 0 (0)        ; 8 (8)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |mg7sm|scfifo:mgl_prim1|A_I2FIFO:subfifo|a_imfifo:IMF|dffpipe:$00022                                                                                                                                    ; work         ;
+;             |dffpipe:$00024|                         ; 2 (2)       ; 2            ; 0           ; 0    ; 0 (0)        ; 2 (2)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |mg7sm|scfifo:mgl_prim1|A_I2FIFO:subfifo|a_imfifo:IMF|dffpipe:$00024                                                                                                                                    ; work         ;
+;             |dffpipe:$00027|                         ; 3 (3)       ; 3            ; 0           ; 0    ; 0 (0)        ; 2 (2)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |mg7sm|scfifo:mgl_prim1|A_I2FIFO:subfifo|a_imfifo:IMF|dffpipe:$00027                                                                                                                                    ; work         ;
+;             |dffpipe:$00031|                         ; 3 (3)       ; 3            ; 0           ; 0    ; 0 (0)        ; 2 (2)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |mg7sm|scfifo:mgl_prim1|A_I2FIFO:subfifo|a_imfifo:IMF|dffpipe:$00031                                                                                                                                    ; work         ;
+;             |lpm_add_sub:$00008|                     ; 7 (0)       ; 0            ; 0           ; 0    ; 7 (0)        ; 0 (0)             ; 0 (0)            ; 7 (0)           ; 0 (0)      ; |mg7sm|scfifo:mgl_prim1|A_I2FIFO:subfifo|a_imfifo:IMF|lpm_add_sub:$00008                                                                                                                                ; work         ;
+;                |addcore:adder|                       ; 7 (1)       ; 0            ; 0           ; 0    ; 7 (1)        ; 0 (0)             ; 0 (0)            ; 7 (1)           ; 0 (0)      ; |mg7sm|scfifo:mgl_prim1|A_I2FIFO:subfifo|a_imfifo:IMF|lpm_add_sub:$00008|addcore:adder                                                                                                                  ; work         ;
+;                   |a_csnbuffer:result_node|          ; 6 (6)       ; 0            ; 0           ; 0    ; 6 (6)        ; 0 (0)             ; 0 (0)            ; 6 (6)           ; 0 (0)      ; |mg7sm|scfifo:mgl_prim1|A_I2FIFO:subfifo|a_imfifo:IMF|lpm_add_sub:$00008|addcore:adder|a_csnbuffer:result_node                                                                                          ; work         ;
+;             |lpm_counter:rd_ptr|                     ; 8 (0)       ; 8            ; 0           ; 0    ; 0 (0)        ; 0 (0)             ; 8 (0)            ; 8 (0)           ; 0 (0)      ; |mg7sm|scfifo:mgl_prim1|A_I2FIFO:subfifo|a_imfifo:IMF|lpm_counter:rd_ptr                                                                                                                                ; work         ;
+;                |alt_counter_f10ke:wysi_counter|      ; 8 (8)       ; 8            ; 0           ; 0    ; 0 (0)        ; 0 (0)             ; 8 (8)            ; 8 (8)           ; 0 (0)      ; |mg7sm|scfifo:mgl_prim1|A_I2FIFO:subfifo|a_imfifo:IMF|lpm_counter:rd_ptr|alt_counter_f10ke:wysi_counter                                                                                                 ; work         ;
+;             |lpm_counter:wr_ptr|                     ; 8 (0)       ; 8            ; 0           ; 0    ; 0 (0)        ; 0 (0)             ; 8 (0)            ; 8 (0)           ; 0 (0)      ; |mg7sm|scfifo:mgl_prim1|A_I2FIFO:subfifo|a_imfifo:IMF|lpm_counter:wr_ptr                                                                                                                                ; work         ;
+;                |alt_counter_f10ke:wysi_counter|      ; 8 (8)       ; 8            ; 0           ; 0    ; 0 (0)        ; 0 (0)             ; 8 (8)            ; 8 (8)           ; 0 (0)      ; |mg7sm|scfifo:mgl_prim1|A_I2FIFO:subfifo|a_imfifo:IMF|lpm_counter:wr_ptr|alt_counter_f10ke:wysi_counter                                                                                                 ; work         ;
++------------------------------------------------------+-------------+--------------+-------------+------+--------------+-------------------+------------------+-----------------+------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                    ;
++-----------------------------------------------------------------------------+-------------+--------------+--------------+--------------+--------------+------+------+
+; Name                                                                        ; Mode        ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF  ;
++-----------------------------------------------------------------------------+-------------+--------------+--------------+--------------+--------------+------+------+
+; scfifo:mgl_prim1|A_I2FIFO:subfifo|a_imfifo:IMF|altram:memory_block0|content ; Single Port ; 128          ; 8            ; --           ; --           ; 1024 ; none ;
+; scfifo:mgl_prim1|A_I2FIFO:subfifo|a_imfifo:IMF|altram:memory_block1|content ; Single Port ; 128          ; 8            ; --           ; --           ; 1024 ; none ;
++-----------------------------------------------------------------------------+-------------+--------------+--------------+--------------+--------------+------+------+
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------+
+; State Machine - |mg7sm|scfifo:mgl_prim1|A_I2FIFO:subfifo|IM_FEEDS_WHO             ;
++-----------------+-----------------+--------------+-----------------+--------------+
+; Name            ; im_feeds_ff2_da ; im_feeds_ff2 ; im_feeds_ff1_da ; im_feeds_ff1 ;
++-----------------+-----------------+--------------+-----------------+--------------+
+; im_feeds_ff1    ; 0               ; 0            ; 0               ; 0            ;
+; im_feeds_ff1_da ; 0               ; 0            ; 1               ; 1            ;
+; im_feeds_ff2    ; 0               ; 1            ; 0               ; 1            ;
+; im_feeds_ff2_da ; 1               ; 0            ; 0               ; 1            ;
++-----------------+-----------------+--------------+-----------------+--------------+
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------+
+; State Machine - |mg7sm|scfifo:mgl_prim1|A_I2FIFO:subfifo|READ_WHERE ;
++----------+----------------------------------------------------------+
+; Name     ; read_ff2                                                 ;
++----------+----------------------------------------------------------+
+; read_ff1 ; 0                                                        ;
+; read_ff2 ; 1                                                        ;
++----------+----------------------------------------------------------+
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------------+
+; State Machine - |mg7sm|scfifo:mgl_prim1|A_I2FIFO:subfifo|WRITE_WHERE ;
++-----------+----------------------------------------------------------+
+; Name      ; write_ff2                                                ;
++-----------+----------------------------------------------------------+
+; write_ff1 ; 0                                                        ;
+; write_ff2 ; 1                                                        ;
++-----------+----------------------------------------------------------+
+
+
+Encoding Type:  One-Hot
++------------------------------------------------------------------------------------+
+; State Machine - |mg7sm|scfifo:mgl_prim1|A_I2FIFO:subfifo|a_fefifo:FEF|sm_emptyfull ;
++--------------+--------------+------------+-----------------------------------------+
+; Name         ; state_middle ; state_full ; state_empty                             ;
++--------------+--------------+------------+-----------------------------------------+
+; state_empty  ; 0            ; 0          ; 0                                       ;
+; state_middle ; 1            ; 0          ; 1                                       ;
+; state_full   ; 0            ; 1          ; 1                                       ;
++--------------+--------------+------------+-----------------------------------------+
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------------------------------+
+; State Machine - |mg7sm|scfifo:mgl_prim1|A_I2FIFO:subfifo|a_imfifo:IMF|a_fefifo:fifo_state|sm_emptyfull ;
++--------------+--------------+------------+-------------------------------------------------------------+
+; Name         ; state_middle ; state_full ; state_empty                                                 ;
++--------------+--------------+------------+-------------------------------------------------------------+
+; state_empty  ; 0            ; 0          ; 0                                                           ;
+; state_middle ; 1            ; 0          ; 1                                                           ;
+; state_full   ; 0            ; 1          ; 1                                                           ;
++--------------+--------------+------------+-------------------------------------------------------------+
+
+
++-----------------------------------------------------------------+
+; Registers Removed During Synthesis                              ;
++--------------------------------------------+--------------------+
+; Register name                              ; Reason for Removal ;
++--------------------------------------------+--------------------+
+; scfifo:mgl_prim1|A_I2FIFO:subfifo|b_im_mux ; Lost fanout        ;
+; Total Number of Removed Registers = 1      ;                    ;
++--------------------------------------------+--------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 173   ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 78    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------+
+; Source assignments for scfifo:mgl_prim1|a_i2fifo:subfifo|a_imfifo:IMF|lpm_counter:wr_ptr ;
++---------------------------+-------+------+-----------------------------------------------+
+; Assignment                ; Value ; From ; To                                            ;
++---------------------------+-------+------+-----------------------------------------------+
+; SUPPRESS_DA_RULE_INTERNAL ; a101  ; -    ; -                                             ;
+; SUPPRESS_DA_RULE_INTERNAL ; s102  ; -    ; -                                             ;
+; SUPPRESS_DA_RULE_INTERNAL ; s103  ; -    ; -                                             ;
++---------------------------+-------+------+-----------------------------------------------+
+
+
++------------------------------------------------------------------------------------------+
+; Source assignments for scfifo:mgl_prim1|a_i2fifo:subfifo|a_imfifo:IMF|lpm_counter:rd_ptr ;
++---------------------------+-------+------+-----------------------------------------------+
+; Assignment                ; Value ; From ; To                                            ;
++---------------------------+-------+------+-----------------------------------------------+
+; SUPPRESS_DA_RULE_INTERNAL ; a101  ; -    ; -                                             ;
+; SUPPRESS_DA_RULE_INTERNAL ; s102  ; -    ; -                                             ;
+; SUPPRESS_DA_RULE_INTERNAL ; s103  ; -    ; -                                             ;
++---------------------------+-------+------+-----------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Source assignments for scfifo:mgl_prim1|a_i2fifo:subfifo|a_imfifo:IMF|a_fefifo:fifo_state|lpm_counter:$00003 ;
++---------------------------+-------+------+-------------------------------------------------------------------+
+; Assignment                ; Value ; From ; To                                                                ;
++---------------------------+-------+------+-------------------------------------------------------------------+
+; SUPPRESS_DA_RULE_INTERNAL ; a101  ; -    ; -                                                                 ;
+; SUPPRESS_DA_RULE_INTERNAL ; s102  ; -    ; -                                                                 ;
+; SUPPRESS_DA_RULE_INTERNAL ; s103  ; -    ; -                                                                 ;
++---------------------------+-------+------+-------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------+
+; Source assignments for scfifo:mgl_prim1|a_i2fifo:subfifo|a_imfifo:IMF|lpm_add_sub:$00008|addcore:adder ;
++---------------------------+-------+------+-------------------------------------------------------------+
+; Assignment                ; Value ; From ; To                                                          ;
++---------------------------+-------+------+-------------------------------------------------------------+
+; SUPPRESS_DA_RULE_INTERNAL ; A103  ; -    ; -                                                           ;
++---------------------------+-------+------+-------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------+
+; Source assignments for scfifo:mgl_prim1|a_i2fifo:subfifo|a_imfifo:IMF|dffpipe:$00010 ;
++---------------------------------+-------+------+-------------------------------------+
+; Assignment                      ; Value ; From ; To                                  ;
++---------------------------------+-------+------+-------------------------------------+
+; AUTO_SHIFT_REGISTER_RECOGNITION ; OFF   ; -    ; -                                   ;
++---------------------------------+-------+------+-------------------------------------+
+
+
++--------------------------------------------------------------------------------------+
+; Source assignments for scfifo:mgl_prim1|a_i2fifo:subfifo|a_imfifo:IMF|dffpipe:$00014 ;
++---------------------------------+-------+------+-------------------------------------+
+; Assignment                      ; Value ; From ; To                                  ;
++---------------------------------+-------+------+-------------------------------------+
+; AUTO_SHIFT_REGISTER_RECOGNITION ; OFF   ; -    ; -                                   ;
++---------------------------------+-------+------+-------------------------------------+
+
+
++--------------------------------------------------------------------------------------+
+; Source assignments for scfifo:mgl_prim1|a_i2fifo:subfifo|a_imfifo:IMF|dffpipe:$00018 ;
++---------------------------------+-------+------+-------------------------------------+
+; Assignment                      ; Value ; From ; To                                  ;
++---------------------------------+-------+------+-------------------------------------+
+; AUTO_SHIFT_REGISTER_RECOGNITION ; OFF   ; -    ; -                                   ;
++---------------------------------+-------+------+-------------------------------------+
+
+
++--------------------------------------------------------------------------------------+
+; Source assignments for scfifo:mgl_prim1|a_i2fifo:subfifo|a_imfifo:IMF|dffpipe:$00020 ;
++---------------------------------+-------+------+-------------------------------------+
+; Assignment                      ; Value ; From ; To                                  ;
++---------------------------------+-------+------+-------------------------------------+
+; AUTO_SHIFT_REGISTER_RECOGNITION ; OFF   ; -    ; -                                   ;
++---------------------------------+-------+------+-------------------------------------+
+
+
++--------------------------------------------------------------------------------------+
+; Source assignments for scfifo:mgl_prim1|a_i2fifo:subfifo|a_imfifo:IMF|dffpipe:$00022 ;
++---------------------------------+-------+------+-------------------------------------+
+; Assignment                      ; Value ; From ; To                                  ;
++---------------------------------+-------+------+-------------------------------------+
+; AUTO_SHIFT_REGISTER_RECOGNITION ; OFF   ; -    ; -                                   ;
++---------------------------------+-------+------+-------------------------------------+
+
+
++--------------------------------------------------------------------------------------+
+; Source assignments for scfifo:mgl_prim1|a_i2fifo:subfifo|a_imfifo:IMF|dffpipe:$00024 ;
++---------------------------------+-------+------+-------------------------------------+
+; Assignment                      ; Value ; From ; To                                  ;
++---------------------------------+-------+------+-------------------------------------+
+; AUTO_SHIFT_REGISTER_RECOGNITION ; OFF   ; -    ; -                                   ;
++---------------------------------+-------+------+-------------------------------------+
+
+
++--------------------------------------------------------------------------------------+
+; Source assignments for scfifo:mgl_prim1|a_i2fifo:subfifo|a_imfifo:IMF|dffpipe:$00027 ;
++---------------------------------+-------+------+-------------------------------------+
+; Assignment                      ; Value ; From ; To                                  ;
++---------------------------------+-------+------+-------------------------------------+
+; AUTO_SHIFT_REGISTER_RECOGNITION ; OFF   ; -    ; -                                   ;
++---------------------------------+-------+------+-------------------------------------+
+
+
++--------------------------------------------------------------------------------------+
+; Source assignments for scfifo:mgl_prim1|a_i2fifo:subfifo|a_imfifo:IMF|dffpipe:$00029 ;
++---------------------------------+-------+------+-------------------------------------+
+; Assignment                      ; Value ; From ; To                                  ;
++---------------------------------+-------+------+-------------------------------------+
+; AUTO_SHIFT_REGISTER_RECOGNITION ; OFF   ; -    ; -                                   ;
++---------------------------------+-------+------+-------------------------------------+
+
+
++--------------------------------------------------------------------------------------+
+; Source assignments for scfifo:mgl_prim1|a_i2fifo:subfifo|a_imfifo:IMF|dffpipe:$00031 ;
++---------------------------------+-------+------+-------------------------------------+
+; Assignment                      ; Value ; From ; To                                  ;
++---------------------------------+-------+------+-------------------------------------+
+; AUTO_SHIFT_REGISTER_RECOGNITION ; OFF   ; -    ; -                                   ;
++---------------------------------+-------+------+-------------------------------------+
+
+
++------------------------------------------------------------------------------------------+
+; Source assignments for scfifo:mgl_prim1|a_i2fifo:subfifo|a_fefifo:FEF|lpm_counter:$00003 ;
++---------------------------+-------+------+-----------------------------------------------+
+; Assignment                ; Value ; From ; To                                            ;
++---------------------------+-------+------+-----------------------------------------------+
+; SUPPRESS_DA_RULE_INTERNAL ; a101  ; -    ; -                                             ;
+; SUPPRESS_DA_RULE_INTERNAL ; s102  ; -    ; -                                             ;
+; SUPPRESS_DA_RULE_INTERNAL ; s103  ; -    ; -                                             ;
++---------------------------+-------+------+-----------------------------------------------+
+
+
++---------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: scfifo:mgl_prim1 ;
++-------------------------+---------+---------------------------+
+; Parameter Name          ; Value   ; Type                      ;
++-------------------------+---------+---------------------------+
+; AUTO_CARRY_CHAINS       ; ON      ; AUTO_CARRY                ;
+; IGNORE_CARRY_BUFFERS    ; OFF     ; IGNORE_CARRY              ;
+; AUTO_CASCADE_CHAINS     ; ON      ; AUTO_CASCADE              ;
+; IGNORE_CASCADE_BUFFERS  ; OFF     ; IGNORE_CASCADE            ;
+; lpm_width               ; 8       ; Signed Integer            ;
+; LPM_NUMWORDS            ; 256     ; Signed Integer            ;
+; LPM_WIDTHU              ; 8       ; Signed Integer            ;
+; LPM_SHOWAHEAD           ; OFF     ; Untyped                   ;
+; UNDERFLOW_CHECKING      ; ON      ; Untyped                   ;
+; OVERFLOW_CHECKING       ; ON      ; Untyped                   ;
+; ALLOW_RWCYCLE_WHEN_FULL ; OFF     ; Untyped                   ;
+; ADD_RAM_OUTPUT_REGISTER ; OFF     ; Untyped                   ;
+; ALMOST_FULL_VALUE       ; 0       ; Untyped                   ;
+; ALMOST_EMPTY_VALUE      ; 0       ; Untyped                   ;
+; USE_EAB                 ; ON      ; Untyped                   ;
+; MAXIMIZE_SPEED          ; 5       ; Untyped                   ;
+; DEVICE_FAMILY           ; FLEX10K ; Untyped                   ;
+; OPTIMIZE_FOR_SPEED      ; 1       ; Untyped                   ;
+; CBXI_PARAMETER          ; NOTHING ; Untyped                   ;
++-------------------------+---------+---------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------+
+; scfifo Parameter Settings by Entity Instance  ;
++----------------------------+------------------+
+; Name                       ; Value            ;
++----------------------------+------------------+
+; Number of entity instances ; 1                ;
+; Entity Instance            ; scfifo:mgl_prim1 ;
+;     -- FIFO Type           ; Single Clock     ;
+;     -- lpm_width           ; 8                ;
+;     -- LPM_NUMWORDS        ; 256              ;
+;     -- LPM_SHOWAHEAD       ; OFF              ;
+;     -- USE_EAB             ; ON               ;
++----------------------------+------------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
+    Info: Copyright (C) 1991-2009 Altera Corporation. All rights reserved.
+    Info: Your use of Altera Corporation's design tools, logic functions 
+    Info: and other software and tools, and its AMPP partner logic 
+    Info: functions, and any output files from any of the foregoing 
+    Info: (including device programming or simulation files), and any 
+    Info: associated documentation or information are expressly subject 
+    Info: to the terms and conditions of the Altera Program License 
+    Info: Subscription Agreement, Altera MegaCore Function License 
+    Info: Agreement, or other applicable license agreement, including, 
+    Info: without limitation, that your use is for the sole purpose of 
+    Info: programming logic devices manufactured by Altera and sold by 
+    Info: Altera or its authorized distributors.  Please refer to the 
+    Info: applicable agreement for further details.
+    Info: Processing started: Fri Jan 02 21:40:27 2015
+Info: Command: quartus_map mg7sm --source=D:\Beatka\AGH\TC\snake\greybox_tmp/greybox_tmp/mg7sm.v --ini=greybox_disable_cut_checks=on --family=FLEX10K
+Info: Found 1 design units, including 1 entities, in source file mg7sm.v
+    Info: Found entity 1: mg7sm
+Info: Elaborating entity "mg7sm" for the top level hierarchy
+Info: Elaborating entity "scfifo" for hierarchy "scfifo:mgl_prim1"
+Info: Elaborated megafunction instantiation "scfifo:mgl_prim1"
+Info: Instantiated megafunction "scfifo:mgl_prim1" with the following parameter:
+    Info: Parameter "intended_device_family" = "FLEX10K"
+    Info: Parameter "lpm_numwords" = "256"
+    Info: Parameter "lpm_showahead" = "OFF"
+    Info: Parameter "lpm_type" = "scfifo"
+    Info: Parameter "lpm_width" = "8"
+    Info: Parameter "lpm_widthu" = "8"
+    Info: Parameter "overflow_checking" = "ON"
+    Info: Parameter "underflow_checking" = "ON"
+    Info: Parameter "use_eab" = "ON"
+Info: Elaborating entity "a_i2fifo" for hierarchy "scfifo:mgl_prim1|a_i2fifo:subfifo"
+Info: Elaborated megafunction instantiation "scfifo:mgl_prim1|a_i2fifo:subfifo", which is child of megafunction instantiation "scfifo:mgl_prim1"
+Info: Elaborating entity "a_imfifo" for hierarchy "scfifo:mgl_prim1|a_i2fifo:subfifo|a_imfifo:IMF"
+Info: Elaborated megafunction instantiation "scfifo:mgl_prim1|a_i2fifo:subfifo|a_imfifo:IMF", which is child of megafunction instantiation "scfifo:mgl_prim1"
+Info: Elaborating entity "altram" for hierarchy "scfifo:mgl_prim1|a_i2fifo:subfifo|a_imfifo:IMF|altram:memory_block0"
+Critical Warning: Can't find Memory Initialization File or Hexadecimal (Intel-Format) File D:/Beatka/AGH/TC/snake/greybox_tmp/greybox_tmp/none.mif -- setting all initial values to 0
+Info: Elaborated megafunction instantiation "scfifo:mgl_prim1|a_i2fifo:subfifo|a_imfifo:IMF|altram:memory_block0", which is child of megafunction instantiation "scfifo:mgl_prim1"
+Info: Elaborating entity "lpm_counter" for hierarchy "scfifo:mgl_prim1|a_i2fifo:subfifo|a_imfifo:IMF|lpm_counter:wr_ptr"
+Info: Elaborated megafunction instantiation "scfifo:mgl_prim1|a_i2fifo:subfifo|a_imfifo:IMF|lpm_counter:wr_ptr", which is child of megafunction instantiation "scfifo:mgl_prim1"
+Info: Elaborating entity "alt_counter_f10ke" for hierarchy "scfifo:mgl_prim1|a_i2fifo:subfifo|a_imfifo:IMF|lpm_counter:wr_ptr|alt_counter_f10ke:wysi_counter"
+Info: Elaborated megafunction instantiation "scfifo:mgl_prim1|a_i2fifo:subfifo|a_imfifo:IMF|lpm_counter:wr_ptr|alt_counter_f10ke:wysi_counter", which is child of megafunction instantiation "scfifo:mgl_prim1"
+Info: Elaborating entity "busmux" for hierarchy "scfifo:mgl_prim1|a_i2fifo:subfifo|a_imfifo:IMF|busmux:data_read_mux"
+Info: Elaborated megafunction instantiation "scfifo:mgl_prim1|a_i2fifo:subfifo|a_imfifo:IMF|busmux:data_read_mux", which is child of megafunction instantiation "scfifo:mgl_prim1"
+Info: Elaborating entity "lpm_mux" for hierarchy "scfifo:mgl_prim1|a_i2fifo:subfifo|a_imfifo:IMF|busmux:data_read_mux|lpm_mux:$00000"
+Info: Elaborated megafunction instantiation "scfifo:mgl_prim1|a_i2fifo:subfifo|a_imfifo:IMF|busmux:data_read_mux|lpm_mux:$00000", which is child of megafunction instantiation "scfifo:mgl_prim1"
+Info: Elaborating entity "altshift" for hierarchy "scfifo:mgl_prim1|a_i2fifo:subfifo|a_imfifo:IMF|busmux:data_read_mux|lpm_mux:$00000|altshift:external_latency_ffs"
+Info: Elaborated megafunction instantiation "scfifo:mgl_prim1|a_i2fifo:subfifo|a_imfifo:IMF|busmux:data_read_mux|lpm_mux:$00000|altshift:external_latency_ffs", which is child of megafunction instantiation "scfifo:mgl_prim1"
+Info: Elaborating entity "muxlut" for hierarchy "scfifo:mgl_prim1|a_i2fifo:subfifo|a_imfifo:IMF|busmux:data_read_mux|lpm_mux:$00000|muxlut:$00009"
+Info: Elaborated megafunction instantiation "scfifo:mgl_prim1|a_i2fifo:subfifo|a_imfifo:IMF|busmux:data_read_mux|lpm_mux:$00000|muxlut:$00009", which is child of megafunction instantiation "scfifo:mgl_prim1"
+Info: Elaborating entity "a_fefifo" for hierarchy "scfifo:mgl_prim1|a_i2fifo:subfifo|a_imfifo:IMF|a_fefifo:fifo_state"
+Info: Elaborated megafunction instantiation "scfifo:mgl_prim1|a_i2fifo:subfifo|a_imfifo:IMF|a_fefifo:fifo_state", which is child of megafunction instantiation "scfifo:mgl_prim1"
+Info: Elaborating entity "lpm_compare" for hierarchy "scfifo:mgl_prim1|a_i2fifo:subfifo|a_imfifo:IMF|a_fefifo:fifo_state|lpm_compare:is_almost_empty_compare"
+Info: Elaborated megafunction instantiation "scfifo:mgl_prim1|a_i2fifo:subfifo|a_imfifo:IMF|a_fefifo:fifo_state|lpm_compare:is_almost_empty_compare", which is child of megafunction instantiation "scfifo:mgl_prim1"
+Info: Elaborating entity "comptree" for hierarchy "scfifo:mgl_prim1|a_i2fifo:subfifo|a_imfifo:IMF|a_fefifo:fifo_state|lpm_compare:is_almost_empty_compare|comptree:comparator"
+Info: Elaborated megafunction instantiation "scfifo:mgl_prim1|a_i2fifo:subfifo|a_imfifo:IMF|a_fefifo:fifo_state|lpm_compare:is_almost_empty_compare|comptree:comparator", which is child of megafunction instantiation "scfifo:mgl_prim1"
+Info: Elaborating entity "cmpchain" for hierarchy "scfifo:mgl_prim1|a_i2fifo:subfifo|a_imfifo:IMF|a_fefifo:fifo_state|lpm_compare:is_almost_empty_compare|comptree:comparator|cmpchain:cmp_end"
+Info: Elaborated megafunction instantiation "scfifo:mgl_prim1|a_i2fifo:subfifo|a_imfifo:IMF|a_fefifo:fifo_state|lpm_compare:is_almost_empty_compare|comptree:comparator|cmpchain:cmp_end", which is child of megafunction instantiation "scfifo:mgl_prim1"
+Info: Elaborating entity "comptree" for hierarchy "scfifo:mgl_prim1|a_i2fifo:subfifo|a_imfifo:IMF|a_fefifo:fifo_state|lpm_compare:is_almost_empty_compare|comptree:comparator|cmpchain:cmp_end|comptree:comp"
+Info: Elaborated megafunction instantiation "scfifo:mgl_prim1|a_i2fifo:subfifo|a_imfifo:IMF|a_fefifo:fifo_state|lpm_compare:is_almost_empty_compare|comptree:comparator|cmpchain:cmp_end|comptree:comp", which is child of megafunction instantiation "scfifo:mgl_prim1"
+Info: Elaborating entity "cmpchain" for hierarchy "scfifo:mgl_prim1|a_i2fifo:subfifo|a_imfifo:IMF|a_fefifo:fifo_state|lpm_compare:is_almost_empty_compare|comptree:comparator|cmpchain:cmp_end|comptree:comp|cmpchain:cmp[1]"
+Info: Elaborated megafunction instantiation "scfifo:mgl_prim1|a_i2fifo:subfifo|a_imfifo:IMF|a_fefifo:fifo_state|lpm_compare:is_almost_empty_compare|comptree:comparator|cmpchain:cmp_end|comptree:comp|cmpchain:cmp[1]", which is child of megafunction instantiation "scfifo:mgl_prim1"
+Info: Elaborating entity "comptree" for hierarchy "scfifo:mgl_prim1|a_i2fifo:subfifo|a_imfifo:IMF|a_fefifo:fifo_state|lpm_compare:is_almost_empty_compare|comptree:comparator|cmpchain:cmp_end|comptree:comp|comptree:sub_comptree"
+Info: Elaborated megafunction instantiation "scfifo:mgl_prim1|a_i2fifo:subfifo|a_imfifo:IMF|a_fefifo:fifo_state|lpm_compare:is_almost_empty_compare|comptree:comparator|cmpchain:cmp_end|comptree:comp|comptree:sub_comptree", which is child of megafunction instantiation "scfifo:mgl_prim1"
+Info: Elaborating entity "cmpchain" for hierarchy "scfifo:mgl_prim1|a_i2fifo:subfifo|a_imfifo:IMF|a_fefifo:fifo_state|lpm_compare:is_almost_empty_compare|comptree:comparator|cmpchain:cmp_end|comptree:comp|comptree:sub_comptree|cmpchain:cmp_end"
+Info: Elaborated megafunction instantiation "scfifo:mgl_prim1|a_i2fifo:subfifo|a_imfifo:IMF|a_fefifo:fifo_state|lpm_compare:is_almost_empty_compare|comptree:comparator|cmpchain:cmp_end|comptree:comp|comptree:sub_comptree|cmpchain:cmp_end", which is child of megafunction instantiation "scfifo:mgl_prim1"
+Info: Elaborating entity "altshift" for hierarchy "scfifo:mgl_prim1|a_i2fifo:subfifo|a_imfifo:IMF|a_fefifo:fifo_state|lpm_compare:is_almost_empty_compare|altshift:aeb_ext_lat_ffs"
+Info: Elaborated megafunction instantiation "scfifo:mgl_prim1|a_i2fifo:subfifo|a_imfifo:IMF|a_fefifo:fifo_state|lpm_compare:is_almost_empty_compare|altshift:aeb_ext_lat_ffs", which is child of megafunction instantiation "scfifo:mgl_prim1"
+Info: Elaborating entity "lpm_compare" for hierarchy "scfifo:mgl_prim1|a_i2fifo:subfifo|a_imfifo:IMF|a_fefifo:fifo_state|lpm_compare:is_almost_full_compare"
+Info: Elaborated megafunction instantiation "scfifo:mgl_prim1|a_i2fifo:subfifo|a_imfifo:IMF|a_fefifo:fifo_state|lpm_compare:is_almost_full_compare", which is child of megafunction instantiation "scfifo:mgl_prim1"
+Info: Elaborating entity "lpm_counter" for hierarchy "scfifo:mgl_prim1|a_i2fifo:subfifo|a_imfifo:IMF|a_fefifo:fifo_state|lpm_counter:$00003"
+Info: Elaborated megafunction instantiation "scfifo:mgl_prim1|a_i2fifo:subfifo|a_imfifo:IMF|a_fefifo:fifo_state|lpm_counter:$00003", which is child of megafunction instantiation "scfifo:mgl_prim1"
+Info: Elaborating entity "alt_counter_f10ke" for hierarchy "scfifo:mgl_prim1|a_i2fifo:subfifo|a_imfifo:IMF|a_fefifo:fifo_state|lpm_counter:$00003|alt_counter_f10ke:wysi_counter"
+Info: Elaborated megafunction instantiation "scfifo:mgl_prim1|a_i2fifo:subfifo|a_imfifo:IMF|a_fefifo:fifo_state|lpm_counter:$00003|alt_counter_f10ke:wysi_counter", which is child of megafunction instantiation "scfifo:mgl_prim1"
+Info: Elaborating entity "lpm_add_sub" for hierarchy "scfifo:mgl_prim1|a_i2fifo:subfifo|a_imfifo:IMF|lpm_add_sub:$00008"
+Info: Elaborated megafunction instantiation "scfifo:mgl_prim1|a_i2fifo:subfifo|a_imfifo:IMF|lpm_add_sub:$00008", which is child of megafunction instantiation "scfifo:mgl_prim1"
+Info: Elaborating entity "addcore" for hierarchy "scfifo:mgl_prim1|a_i2fifo:subfifo|a_imfifo:IMF|lpm_add_sub:$00008|addcore:adder"
+Info: Elaborated megafunction instantiation "scfifo:mgl_prim1|a_i2fifo:subfifo|a_imfifo:IMF|lpm_add_sub:$00008|addcore:adder", which is child of megafunction instantiation "scfifo:mgl_prim1"
+Info: Elaborating entity "a_csnbuffer" for hierarchy "scfifo:mgl_prim1|a_i2fifo:subfifo|a_imfifo:IMF|lpm_add_sub:$00008|addcore:adder|a_csnbuffer:oflow_node"
+Info: Elaborated megafunction instantiation "scfifo:mgl_prim1|a_i2fifo:subfifo|a_imfifo:IMF|lpm_add_sub:$00008|addcore:adder|a_csnbuffer:oflow_node", which is child of megafunction instantiation "scfifo:mgl_prim1"
+Info: Elaborating entity "a_csnbuffer" for hierarchy "scfifo:mgl_prim1|a_i2fifo:subfifo|a_imfifo:IMF|lpm_add_sub:$00008|addcore:adder|a_csnbuffer:result_node"
+Info: Elaborated megafunction instantiation "scfifo:mgl_prim1|a_i2fifo:subfifo|a_imfifo:IMF|lpm_add_sub:$00008|addcore:adder|a_csnbuffer:result_node", which is child of megafunction instantiation "scfifo:mgl_prim1"
+Info: Elaborating entity "altshift" for hierarchy "scfifo:mgl_prim1|a_i2fifo:subfifo|a_imfifo:IMF|lpm_add_sub:$00008|altshift:result_ext_latency_ffs"
+Info: Elaborated megafunction instantiation "scfifo:mgl_prim1|a_i2fifo:subfifo|a_imfifo:IMF|lpm_add_sub:$00008|altshift:result_ext_latency_ffs", which is child of megafunction instantiation "scfifo:mgl_prim1"
+Info: Elaborating entity "dffpipe" for hierarchy "scfifo:mgl_prim1|a_i2fifo:subfifo|a_imfifo:IMF|dffpipe:$00010"
+Info: Elaborated megafunction instantiation "scfifo:mgl_prim1|a_i2fifo:subfifo|a_imfifo:IMF|dffpipe:$00010", which is child of megafunction instantiation "scfifo:mgl_prim1"
+Info: Elaborating entity "busmux" for hierarchy "scfifo:mgl_prim1|a_i2fifo:subfifo|a_imfifo:IMF|busmux:$00012"
+Info: Elaborated megafunction instantiation "scfifo:mgl_prim1|a_i2fifo:subfifo|a_imfifo:IMF|busmux:$00012", which is child of megafunction instantiation "scfifo:mgl_prim1"
+Info: Elaborating entity "lpm_mux" for hierarchy "scfifo:mgl_prim1|a_i2fifo:subfifo|a_imfifo:IMF|busmux:$00012|lpm_mux:$00000"
+Info: Elaborated megafunction instantiation "scfifo:mgl_prim1|a_i2fifo:subfifo|a_imfifo:IMF|busmux:$00012|lpm_mux:$00000", which is child of megafunction instantiation "scfifo:mgl_prim1"
+Info: Elaborating entity "dffpipe" for hierarchy "scfifo:mgl_prim1|a_i2fifo:subfifo|a_imfifo:IMF|dffpipe:$00018"
+Info: Elaborated megafunction instantiation "scfifo:mgl_prim1|a_i2fifo:subfifo|a_imfifo:IMF|dffpipe:$00018", which is child of megafunction instantiation "scfifo:mgl_prim1"
+Info: Elaborating entity "dffpipe" for hierarchy "scfifo:mgl_prim1|a_i2fifo:subfifo|a_imfifo:IMF|dffpipe:$00022"
+Info: Elaborated megafunction instantiation "scfifo:mgl_prim1|a_i2fifo:subfifo|a_imfifo:IMF|dffpipe:$00022", which is child of megafunction instantiation "scfifo:mgl_prim1"
+Info: Elaborating entity "dffpipe" for hierarchy "scfifo:mgl_prim1|a_i2fifo:subfifo|a_imfifo:IMF|dffpipe:$00024"
+Info: Elaborated megafunction instantiation "scfifo:mgl_prim1|a_i2fifo:subfifo|a_imfifo:IMF|dffpipe:$00024", which is child of megafunction instantiation "scfifo:mgl_prim1"
+Info: Elaborating entity "dffpipe" for hierarchy "scfifo:mgl_prim1|a_i2fifo:subfifo|a_imfifo:IMF|dffpipe:$00027"
+Info: Elaborated megafunction instantiation "scfifo:mgl_prim1|a_i2fifo:subfifo|a_imfifo:IMF|dffpipe:$00027", which is child of megafunction instantiation "scfifo:mgl_prim1"
+Info: Elaborating entity "dffpipe" for hierarchy "scfifo:mgl_prim1|a_i2fifo:subfifo|a_imfifo:IMF|dffpipe:$00029"
+Info: Elaborated megafunction instantiation "scfifo:mgl_prim1|a_i2fifo:subfifo|a_imfifo:IMF|dffpipe:$00029", which is child of megafunction instantiation "scfifo:mgl_prim1"
+Info: Elaborating entity "dffpipe" for hierarchy "scfifo:mgl_prim1|a_i2fifo:subfifo|a_imfifo:IMF|dffpipe:$00031"
+Info: Elaborated megafunction instantiation "scfifo:mgl_prim1|a_i2fifo:subfifo|a_imfifo:IMF|dffpipe:$00031", which is child of megafunction instantiation "scfifo:mgl_prim1"
+Info: Elaborating entity "lpm_or" for hierarchy "scfifo:mgl_prim1|a_i2fifo:subfifo|a_imfifo:IMF|lpm_or:$00033"
+Info: Elaborated megafunction instantiation "scfifo:mgl_prim1|a_i2fifo:subfifo|a_imfifo:IMF|lpm_or:$00033", which is child of megafunction instantiation "scfifo:mgl_prim1"
+Info: Elaborating entity "a_f2fifo" for hierarchy "scfifo:mgl_prim1|a_i2fifo:subfifo|a_f2fifo:FF1"
+Info: Elaborated megafunction instantiation "scfifo:mgl_prim1|a_i2fifo:subfifo|a_f2fifo:FF1", which is child of megafunction instantiation "scfifo:mgl_prim1"
+Info: Elaborating entity "lpm_ff" for hierarchy "scfifo:mgl_prim1|a_i2fifo:subfifo|a_f2fifo:FF1|lpm_ff:$00001"
+Info: Elaborated megafunction instantiation "scfifo:mgl_prim1|a_i2fifo:subfifo|a_f2fifo:FF1|lpm_ff:$00001", which is child of megafunction instantiation "scfifo:mgl_prim1"
+Info: Elaborating entity "lpm_ff" for hierarchy "scfifo:mgl_prim1|a_i2fifo:subfifo|a_f2fifo:FF1|lpm_ff:$00011"
+Info: Elaborated megafunction instantiation "scfifo:mgl_prim1|a_i2fifo:subfifo|a_f2fifo:FF1|lpm_ff:$00011", which is child of megafunction instantiation "scfifo:mgl_prim1"
+Info: Elaborating entity "a_fefifo" for hierarchy "scfifo:mgl_prim1|a_i2fifo:subfifo|a_fefifo:FEF"
+Info: Elaborated megafunction instantiation "scfifo:mgl_prim1|a_i2fifo:subfifo|a_fefifo:FEF", which is child of megafunction instantiation "scfifo:mgl_prim1"
+Info: Elaborating entity "lpm_compare" for hierarchy "scfifo:mgl_prim1|a_i2fifo:subfifo|a_fefifo:FEF|lpm_compare:is_almost_full_compare"
+Info: Elaborated megafunction instantiation "scfifo:mgl_prim1|a_i2fifo:subfifo|a_fefifo:FEF|lpm_compare:is_almost_full_compare", which is child of megafunction instantiation "scfifo:mgl_prim1"
+Info: 1 registers lost all their fanouts during netlist optimizations. The first 1 are displayed below.
+    Info: Register "scfifo:mgl_prim1|A_I2FIFO:subfifo|b_im_mux" lost all its fanouts during netlist optimizations.
+Info: Implemented 311 device resources after synthesis - the final resource count might be different
+    Info: Implemented 11 input pins
+    Info: Implemented 18 output pins
+    Info: Implemented 266 logic cells
+    Info: Implemented 16 RAM segments
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 221 megabytes
+    Info: Processing ended: Fri Jan 02 21:40:32 2015
+    Info: Elapsed time: 00:00:05
+    Info: Total CPU time (on all processors): 00:00:05
+
+

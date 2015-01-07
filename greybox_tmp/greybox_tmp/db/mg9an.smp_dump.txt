@@ -1,0 +1,29 @@
+
+State Machine - |mg9an|scfifo:mgl_prim1|A_I2FIFO:subfifo|IM_FEEDS_WHO
+Name im_feeds_ff2_da im_feeds_ff2 im_feeds_ff1_da im_feeds_ff1 
+im_feeds_ff1 0 0 0 0 
+im_feeds_ff1_da 0 0 1 1 
+im_feeds_ff2 0 1 0 1 
+im_feeds_ff2_da 1 0 0 1 
+
+State Machine - |mg9an|scfifo:mgl_prim1|A_I2FIFO:subfifo|READ_WHERE
+Name read_ff2 
+read_ff1 0 
+read_ff2 1 
+
+State Machine - |mg9an|scfifo:mgl_prim1|A_I2FIFO:subfifo|WRITE_WHERE
+Name write_ff2 
+write_ff1 0 
+write_ff2 1 
+
+State Machine - |mg9an|scfifo:mgl_prim1|A_I2FIFO:subfifo|a_fefifo:FEF|sm_emptyfull
+Name state_middle state_full state_empty 
+state_empty 0 0 0 
+state_middle 1 0 1 
+state_full 0 1 1 
+
+State Machine - |mg9an|scfifo:mgl_prim1|A_I2FIFO:subfifo|a_imfifo:IMF|a_fefifo:fifo_state|sm_emptyfull
+Name state_middle state_full state_empty 
+state_empty 0 0 0 
+state_middle 1 0 1 
+state_full 0 1 1 
