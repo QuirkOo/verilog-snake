@@ -1,5 +1,5 @@
 |snake
-MCLK => MCLK~0.IN1
+MCLK => ~NO_FANOUT~
 FLEX_DIGIT_1[0] <= <VCC>
 FLEX_DIGIT_1[1] <= <VCC>
 FLEX_DIGIT_1[2] <= <VCC>
@@ -113,56 +113,5 @@ MATRIX_COL[12] <= <GND>
 MATRIX_COL[13] <= <GND>
 MATRIX_COL[14] <= <GND>
 MATRIX_COL[15] <= <GND>
-
-
-|snake|prescaler:prescaler
-clkin => clkout[7]~reg0.CLK
-clkin => clkout[6]~reg0.CLK
-clkin => clkout[5]~reg0.CLK
-clkin => clkout[4]~reg0.CLK
-clkin => clkout[3]~reg0.CLK
-clkin => clkout[2]~reg0.CLK
-clkin => clkout[1]~reg0.CLK
-clkin => clkout[0]~reg0.CLK
-clkin => counter[31].CLK
-clkin => counter[30].CLK
-clkin => counter[29].CLK
-clkin => counter[28].CLK
-clkin => counter[27].CLK
-clkin => counter[26].CLK
-clkin => counter[25].CLK
-clkin => counter[24].CLK
-clkin => counter[23].CLK
-clkin => counter[22].CLK
-clkin => counter[21].CLK
-clkin => counter[20].CLK
-clkin => counter[19].CLK
-clkin => counter[18].CLK
-clkin => counter[17].CLK
-clkin => counter[16].CLK
-clkin => counter[15].CLK
-clkin => counter[14].CLK
-clkin => counter[13].CLK
-clkin => counter[12].CLK
-clkin => counter[11].CLK
-clkin => counter[10].CLK
-clkin => counter[9].CLK
-clkin => counter[8].CLK
-clkin => counter[7].CLK
-clkin => counter[6].CLK
-clkin => counter[5].CLK
-clkin => counter[4].CLK
-clkin => counter[3].CLK
-clkin => counter[2].CLK
-clkin => counter[1].CLK
-clkin => counter[0].CLK
-clkout[0] <= clkout[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-clkout[1] <= clkout[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-clkout[2] <= clkout[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-clkout[3] <= clkout[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-clkout[4] <= clkout[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-clkout[5] <= clkout[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-clkout[6] <= clkout[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-clkout[7] <= clkout[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 

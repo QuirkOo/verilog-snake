@@ -11,10 +11,14 @@ module snakeMove (
 
 parameter WIDTH = 16;
 parameter HEIGHT = 8;
-wire [3:0] dir;
+reg [3:0] dir;
 
 wire [3:0] buttons = {btnLeft, btnDown, btnRight, btnUp};
-assign dir = buttons;
+
+always @(buttons) begin
+	if (buttons != (dir << 2))
+		dir <= buttons;
+end
 
 always @(posedge clk or negedge reset) begin
 	if (reset == 0) begin

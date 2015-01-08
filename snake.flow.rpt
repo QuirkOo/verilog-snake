@@ -1,5 +1,5 @@
 Flow report for snake
-Fri Jan 02 23:31:17 2015
+Wed Jan 07 23:35:28 2015
 Quartus II Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
 
 
@@ -38,7 +38,7 @@ applicable agreement for further details.
 +------------------------------------------------------------------------+
 ; Flow Summary                                                           ;
 +-------------------------+----------------------------------------------+
-; Flow Status             ; Successful - Fri Jan 02 23:31:17 2015        ;
+; Flow Status             ; Successful - Wed Jan 07 23:35:28 2015        ;
 ; Quartus II Version      ; 9.0 Build 235 06/17/2009 SP 2 SJ Web Edition ;
 ; Revision Name           ; snake                                        ;
 ; Top-level Entity Name   ; snake                                        ;
@@ -57,26 +57,30 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 01/02/2015 23:31:09 ;
+; Start date & time ; 01/07/2015 23:34:52 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; snake               ;
 +-------------------+---------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                 ;
-+------------------------------------+------------------------------+---------------+-------------+----------------+
-; Assignment Name                    ; Value                        ; Default Value ; Entity Name ; Section Id     ;
-+------------------------------------+------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID              ; 758263394955.142023786904648 ; --            ; --          ; --             ;
-; IP_TOOL_NAME                       ; FIFO                         ; --            ; --          ; --             ;
-; IP_TOOL_VERSION                    ; 9.0                          ; --            ; --          ; --             ;
-; MAX_CORE_JUNCTION_TEMP             ; 85                           ; --            ; --          ; --             ;
-; MIN_CORE_JUNCTION_TEMP             ; 0                            ; --            ; --          ; --             ;
-; MISC_FILE                          ; fifo_bb.v                    ; --            ; --          ; --             ;
-; MISC_FILE                          ; fifo.cmp                     ; --            ; --          ; --             ;
-; USE_GENERATED_PHYSICAL_CONSTRAINTS ; Off                          ; --            ; --          ; eda_blast_fpga ;
-+------------------------------------+------------------------------+---------------+-------------+----------------+
++----------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                     ;
++------------------------------------+----------------------------------+---------------+-------------+----------------+
+; Assignment Name                    ; Value                            ; Default Value ; Entity Name ; Section Id     ;
++------------------------------------+----------------------------------+---------------+-------------+----------------+
+; COMPILER_SIGNATURE_ID              ; 52244213409.142067009204516      ; --            ; --          ; --             ;
+; IP_TOOL_NAME                       ; FIFO                             ; --            ; --          ; --             ;
+; IP_TOOL_NAME                       ; LPM_SHIFTREG                     ; --            ; --          ; --             ;
+; IP_TOOL_VERSION                    ; 9.0                              ; --            ; --          ; --             ;
+; IP_TOOL_VERSION                    ; 9.0                              ; --            ; --          ; --             ;
+; MAX_CORE_JUNCTION_TEMP             ; 85                               ; --            ; --          ; --             ;
+; MIN_CORE_JUNCTION_TEMP             ; 0                                ; --            ; --          ; --             ;
+; MISC_FILE                          ; D:/Beatka/AGH/TC/snake/snake.dpf ; --            ; --          ; --             ;
+; MISC_FILE                          ; fifo_bb.v                        ; --            ; --          ; --             ;
+; MISC_FILE                          ; fifo.cmp                         ; --            ; --          ; --             ;
+; MISC_FILE                          ; shiftreg_bb.v                    ; --            ; --          ; --             ;
+; USE_GENERATED_PHYSICAL_CONSTRAINTS ; Off                              ; --            ; --          ; eda_blast_fpga ;
++------------------------------------+----------------------------------+---------------+-------------+----------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------+
@@ -84,11 +88,11 @@ applicable agreement for further details.
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name             ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis    ; 00:00:01     ; 1.0                     ; 212 MB              ; 00:00:01                           ;
-; Fitter                  ; 00:00:03     ; 1.0                     ; 188 MB              ; 00:00:04                           ;
-; Assembler               ; 00:00:01     ; 1.0                     ; 194 MB              ; 00:00:00                           ;
-; Classic Timing Analyzer ; 00:00:00     ; 1.0                     ; 158 MB              ; 00:00:00                           ;
-; Total                   ; 00:00:05     ; --                      ; --                  ; 00:00:05                           ;
+; Analysis & Synthesis    ; 00:00:07     ; 1.0                     ; 199 MB              ; 00:00:07                           ;
+; Fitter                  ; 00:00:12     ; 1.0                     ; 196 MB              ; 00:00:07                           ;
+; Assembler               ; 00:00:06     ; 1.0                     ; 191 MB              ; 00:00:02                           ;
+; Classic Timing Analyzer ; 00:00:08     ; 1.0                     ; 158 MB              ; 00:00:03                           ;
+; Total                   ; 00:00:33     ; --                      ; --                  ; 00:00:19                           ;
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -97,10 +101,10 @@ applicable agreement for further details.
 +-------------------------+------------------+---------------+------------+----------------+
 ; Module Name             ; Machine Hostname ; OS Name       ; OS Version ; Processor type ;
 +-------------------------+------------------+---------------+------------+----------------+
-; Analysis & Synthesis    ; STUPOR           ; Windows Vista ; 6.2        ; x86_64         ;
-; Fitter                  ; STUPOR           ; Windows Vista ; 6.2        ; x86_64         ;
-; Assembler               ; STUPOR           ; Windows Vista ; 6.2        ; x86_64         ;
-; Classic Timing Analyzer ; STUPOR           ; Windows Vista ; 6.2        ; x86_64         ;
+; Analysis & Synthesis    ; WIN-CSNUAM2MPO8  ; Windows Vista ; 6.2        ; i686           ;
+; Fitter                  ; WIN-CSNUAM2MPO8  ; Windows Vista ; 6.2        ; i686           ;
+; Assembler               ; WIN-CSNUAM2MPO8  ; Windows Vista ; 6.2        ; i686           ;
+; Classic Timing Analyzer ; WIN-CSNUAM2MPO8  ; Windows Vista ; 6.2        ; i686           ;
 +-------------------------+------------------+---------------+------------+----------------+
 
 

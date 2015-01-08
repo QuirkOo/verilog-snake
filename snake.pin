@@ -36,7 +36,7 @@
  ------------------------------------------------------------------------------
 
 
-File Generation Date & Time: Fri Jan 02 23:31:14 2015
+File Generation Date & Time: Wed Jan 07 23:35:09 2015
 Quartus II Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
 CHIP  "snake"  ASSIGNED TO AN: EPF10K70RC240-4
 
@@ -48,237 +48,237 @@ nCEO                         : 3         : output :                   :         
 TDO                          : 4         : output :                   :         :           :                
 VCC_INT                      : 5         : power  :                   : 5.0V    :           :                
 GND*                         : 6         :        :                   :         :           :                
-DISP1[0]                     : 7         : output : TTL               :         :           : N              
+GND*                         : 7         :        :                   :         :           :                
 GND*                         : 8         :        :                   :         :           :                
-MATRIX_ROW[0]                : 9         : output : TTL               :         :           : N              
+GND*                         : 9         :        :                   :         :           :                
 GND_INT                      : 10        : gnd    :                   :         :           :                
 GND*                         : 11        :        :                   :         :           :                
-GND*                         : 12        :        :                   :         :           :                
-FLEX_DIGIT_1[0]              : 13        : output : TTL               :         :           : N              
-DISP3[4]                     : 14        : output : TTL               :         :           : N              
-GND*                         : 15        :        :                   :         :           :                
+LED[5]                       : 12        : output : TTL               :         :           : N              
+LED[2]                       : 13        : output : TTL               :         :           : N              
+VGA_VSYNC                    : 14        : output : TTL               :         :           : N              
+MATRIX_COL[7]                : 15        : output : TTL               :         :           : N              
 VCC_INT                      : 16        : power  :                   : 5.0V    :           :                
-GND*                         : 17        :        :                   :         :           :                
+DISP3[2]                     : 17        : output : TTL               :         :           : N              
 GND*                         : 18        :        :                   :         :           :                
 GND*                         : 19        :        :                   :         :           :                
-MATRIX_ROW[3]                : 20        : output : TTL               :         :           : N              
-GND*                         : 21        :        :                   :         :           :                
+MATRIX_COL[14]               : 20        : output : TTL               :         :           : N              
+MATRIX_ROW[7]                : 21        : output : TTL               :         :           : N              
 GND_INT                      : 22        : gnd    :                   :         :           :                
-SW[5]                        : 23        : input  : TTL               :         :           : N              
-GND*                         : 24        :        :                   :         :           :                
-MATRIX_COL[2]                : 25        : output : TTL               :         :           : N              
-DISP1[5]                     : 26        : output : TTL               :         :           : N              
+GND*                         : 23        :        :                   :         :           :                
+DISP1[4]                     : 24        : output : TTL               :         :           : N              
+DISP3[1]                     : 25        : output : TTL               :         :           : N              
+GND*                         : 26        :        :                   :         :           :                
 VCC_INT                      : 27        : power  :                   : 5.0V    :           :                
 GND*                         : 28        :        :                   :         :           :                
-MATRIX_COL[11]               : 29        : output : TTL               :         :           : N              
-GND*                         : 30        :        :                   :         :           :                
-SW[7]                        : 31        : input  : TTL               :         :           : N              
+VGA_HSYNC                    : 29        : output : TTL               :         :           : N              
+FLEX_DIGIT_2[6]              : 30        : output : TTL               :         :           : N              
+MATRIX_COL[12]               : 31        : output : TTL               :         :           : N              
 GND_INT                      : 32        : gnd    :                   :         :           :                
-DISP3[2]                     : 33        : output : TTL               :         :           : N              
+DISP1_DP                     : 33        : output : TTL               :         :           : N              
 GND*                         : 34        :        :                   :         :           :                
-FLEX_DIGIT_1[1]              : 35        : output : TTL               :         :           : N              
-GND*                         : 36        :        :                   :         :           :                
+GND*                         : 35        :        :                   :         :           :                
+SW[6]                        : 36        : input  : TTL               :         :           : N              
 VCC_INT                      : 37        : power  :                   : 5.0V    :           :                
-LED[9]                       : 38        : output : TTL               :         :           : N              
+MATRIX_COL[2]                : 38        : output : TTL               :         :           : N              
 GND*                         : 39        :        :                   :         :           :                
-DISP1[6]                     : 40        : output : TTL               :         :           : N              
-MCLK                         : 41        : input  : TTL               :         :           : N              
+GND*                         : 40        :        :                   :         :           :                
+GND*                         : 41        :        :                   :         :           :                
 GND_INT                      : 42        : gnd    :                   :         :           :                
-MATRIX_COL[9]                : 43        : output : TTL               :         :           : N              
-DISP1[4]                     : 44        : output : TTL               :         :           : N              
-GND*                         : 45        :        :                   :         :           :                
-LED[15]                      : 46        : output : TTL               :         :           : N              
+DISP2_DP                     : 43        : output : TTL               :         :           : N              
+MATRIX_ROW[3]                : 44        : output : TTL               :         :           : N              
+LED[10]                      : 45        : output : TTL               :         :           : N              
+GND*                         : 46        :        :                   :         :           :                
 VCC_INT                      : 47        : power  :                   : 5.0V    :           :                
-GND*                         : 48        :        :                   :         :           :                
-GND*                         : 49        :        :                   :         :           :                
-FLEX_DIGIT_2[3]              : 50        : output : TTL               :         :           : N              
-SW[6]                        : 51        : input  : TTL               :         :           : N              
+FLEX_DIGIT_1[6]              : 48        : output : TTL               :         :           : N              
+LED[1]                       : 49        : output : TTL               :         :           : N              
+GND*                         : 50        :        :                   :         :           :                
+GND*                         : 51        :        :                   :         :           :                
 GND_INT                      : 52        : gnd    :                   :         :           :                
-FLEX_DIGIT_2[6]              : 53        : output : TTL               :         :           : N              
+MATRIX_ROW[2]                : 53        : output : TTL               :         :           : N              
 GND*                         : 54        :        :                   :         :           :                
-DISP1_DP                     : 55        : output : TTL               :         :           : N              
-GND*                         : 56        :        :                   :         :           :                
+FLEX_DIGIT_1[4]              : 55        : output : TTL               :         :           : N              
+MATRIX_COL[13]               : 56        : output : TTL               :         :           : N              
 VCC_INT                      : 57        : power  :                   : 5.0V    :           :                
 TMS                          : 58        : input  :                   :         :           :                
 TRST                         : 59        : input  :                   :         :           :                
 nSTATUS                      : 60        : bidir  :                   :         :           :                
-VGA_BLUE                     : 61        : output : TTL               :         :           : N              
-MATRIX_COL[5]                : 62        : output : TTL               :         :           : N              
-MATRIX_ROW[5]                : 63        : output : TTL               :         :           : N              
-MATRIX_COL[6]                : 64        : output : TTL               :         :           : N              
+GND*                         : 61        :        :                   :         :           :                
+FLEX_MOUSE_CLK               : 62        : bidir  : TTL               :         :           : N              
+GND*                         : 63        :        :                   :         :           :                
+GND*                         : 64        :        :                   :         :           :                
 GND*                         : 65        :        :                   :         :           :                
-LED[4]                       : 66        : output : TTL               :         :           : N              
-FLEX_DIGIT_2_DP              : 67        : output : TTL               :         :           : N              
-DISP1[1]                     : 68        : output : TTL               :         :           : N              
+FLEX_DIGIT_1[1]              : 66        : output : TTL               :         :           : N              
+DISP1[1]                     : 67        : output : TTL               :         :           : N              
+DISP1[2]                     : 68        : output : TTL               :         :           : N              
 GND_INT                      : 69        : gnd    :                   :         :           :                
-GND*                         : 70        :        :                   :         :           :                
-GND*                         : 71        :        :                   :         :           :                
-MATRIX_COL[7]                : 72        : output : TTL               :         :           : N              
-MATRIX_ROW[2]                : 73        : output : TTL               :         :           : N              
-MATRIX_COL[3]                : 74        : output : TTL               :         :           : N              
-DISP2[6]                     : 75        : output : TTL               :         :           : N              
-VGA_HSYNC                    : 76        : output : TTL               :         :           : N              
+SW[2]                        : 70        : input  : TTL               :         :           : N              
+SW[7]                        : 71        : input  : TTL               :         :           : N              
+GND*                         : 72        :        :                   :         :           :                
+GND*                         : 73        :        :                   :         :           :                
+MATRIX_COL[6]                : 74        : output : TTL               :         :           : N              
+DISP4[4]                     : 75        : output : TTL               :         :           : N              
+DISP1[3]                     : 76        : output : TTL               :         :           : N              
 VCC_INT                      : 77        : power  :                   : 5.0V    :           :                
-MATRIX_ROW[4]                : 78        : output : TTL               :         :           : N              
+FLEX_DIGIT_2[4]              : 78        : output : TTL               :         :           : N              
 GND*                         : 79        :        :                   :         :           :                
-MATRIX_ROW[1]                : 80        : output : TTL               :         :           : N              
-DISP3[5]                     : 81        : output : TTL               :         :           : N              
+DISP3_DP                     : 80        : output : TTL               :         :           : N              
+GND*                         : 81        :        :                   :         :           :                
 DISP2[4]                     : 82        : output : TTL               :         :           : N              
-SW[0]                        : 83        : input  : TTL               :         :           : N              
-GND*                         : 84        :        :                   :         :           :                
+GND*                         : 83        :        :                   :         :           :                
+PS2_DATA                     : 84        : bidir  : TTL               :         :           : N              
 GND_INT                      : 85        : gnd    :                   :         :           :                
-VGA_RED                      : 86        : output : TTL               :         :           : N              
-DISP4[0]                     : 87        : output : TTL               :         :           : N              
+FLEX_DIGIT_2[3]              : 86        : output : TTL               :         :           : N              
+DISP4[6]                     : 87        : output : TTL               :         :           : N              
 GND*                         : 88        :        :                   :         :           :                
 VCC_INT                      : 89        : power  :                   : 5.0V    :           :                
 BT[3]                        : 90        : input  : TTL               :         :           : N              
-GND+                         : 91        :        :                   :         :           :                
+MCLK                         : 91        : input  : TTL               :         :           : Y              
 BT[2]                        : 92        : input  : TTL               :         :           : N              
 GND_INT                      : 93        : gnd    :                   :         :           :                
 GND*                         : 94        :        :                   :         :           :                
-GND*                         : 95        :        :                   :         :           :                
+DISP2[6]                     : 95        : output : TTL               :         :           : N              
 VCC_INT                      : 96        : power  :                   : 5.0V    :           :                
-FLEX_DIGIT_1_DP              : 97        : output : TTL               :         :           : N              
-DISP3[3]                     : 98        : output : TTL               :         :           : N              
-DISP1[3]                     : 99        : output : TTL               :         :           : N              
-LED[7]                       : 100       : output : TTL               :         :           : N              
-RS232_TX                     : 101       : output : TTL               :         :           : N              
-LED[11]                      : 102       : output : TTL               :         :           : N              
-FLEX_MOUSE_CLK               : 103       : bidir  : TTL               :         :           : N              
+MATRIX_ROW[6]                : 97        : output : TTL               :         :           : N              
+VGA_BLUE                     : 98        : output : TTL               :         :           : N              
+DISP3[3]                     : 99        : output : TTL               :         :           : N              
+GND*                         : 100       :        :                   :         :           :                
+GND*                         : 101       :        :                   :         :           :                
+FLEX_DIGIT_2[2]              : 102       : output : TTL               :         :           : N              
+BT[1]                        : 103       : input  : TTL               :         :           : N              
 GND_INT                      : 104       : gnd    :                   :         :           :                
 GND*                         : 105       :        :                   :         :           :                
-BT[0]                        : 106       : input  : TTL               :         :           : N              
-DISP4[2]                     : 107       : output : TTL               :         :           : N              
+MATRIX_COL[4]                : 106       : output : TTL               :         :           : N              
+LED[7]                       : 107       : output : TTL               :         :           : N              
 GND*                         : 108       :        :                   :         :           :                
-SW[1]                        : 109       : input  : TTL               :         :           : N              
-DISP2_DP                     : 110       : output : TTL               :         :           : N              
-MATRIX_COL[13]               : 111       : output : TTL               :         :           : N              
+GND*                         : 109       :        :                   :         :           :                
+SW[1]                        : 110       : input  : TTL               :         :           : N              
+GND*                         : 111       :        :                   :         :           :                
 VCC_INT                      : 112       : power  :                   : 5.0V    :           :                
-DISP2[5]                     : 113       : output : TTL               :         :           : N              
-GND*                         : 114       :        :                   :         :           :                
-SW[3]                        : 115       : input  : TTL               :         :           : N              
+DISP4[3]                     : 113       : output : TTL               :         :           : N              
+MATRIX_COL[11]               : 114       : output : TTL               :         :           : N              
+DISP3[6]                     : 115       : output : TTL               :         :           : N              
 GND*                         : 116       :        :                   :         :           :                
 GND*                         : 117       :        :                   :         :           :                
-DISP4[3]                     : 118       : output : TTL               :         :           : N              
-DISP1[2]                     : 119       : output : TTL               :         :           : N              
-DISP4[4]                     : 120       : output : TTL               :         :           : N              
+GND*                         : 118       :        :                   :         :           :                
+MATRIX_COL[3]                : 119       : output : TTL               :         :           : N              
+GND*                         : 120       :        :                   :         :           :                
 nCONFIG                      : 121       : input  :                   :         :           :                
 VCC_INT                      : 122       : power  :                   : 5.0V    :           :                
 MSEL1                        : 123       : input  :                   :         :           :                
 MSEL0                        : 124       : input  :                   :         :           :                
 GND_INT                      : 125       : gnd    :                   :         :           :                
-LED[0]                       : 126       : output : TTL               :         :           : N              
-RS232_RTS                    : 127       : output : TTL               :         :           : N              
-LED[14]                      : 128       : output : TTL               :         :           : N              
-GND*                         : 129       :        :                   :         :           :                
+MATRIX_ROW[5]                : 126       : output : TTL               :         :           : N              
+GND*                         : 127       :        :                   :         :           :                
+GND*                         : 128       :        :                   :         :           :                
+LED[4]                       : 129       : output : TTL               :         :           : N              
 VCC_INT                      : 130       : power  :                   : 5.0V    :           :                
-GND*                         : 131       :        :                   :         :           :                
-MATRIX_COL[8]                : 132       : output : TTL               :         :           : N              
-DISP3[0]                     : 133       : output : TTL               :         :           : N              
-GND*                         : 134       :        :                   :         :           :                
+LED[11]                      : 131       : output : TTL               :         :           : N              
+DISP4[0]                     : 132       : output : TTL               :         :           : N              
+DISP3[5]                     : 133       : output : TTL               :         :           : N              
+DISP4[5]                     : 134       : output : TTL               :         :           : N              
 GND_INT                      : 135       : gnd    :                   :         :           :                
-GND*                         : 136       :        :                   :         :           :                
+MATRIX_COL[15]               : 136       : output : TTL               :         :           : N              
 FLEX_DIGIT_1[2]              : 137       : output : TTL               :         :           : N              
-GND*                         : 138       :        :                   :         :           :                
-MATRIX_ROW[6]                : 139       : output : TTL               :         :           : N              
+LED[12]                      : 138       : output : TTL               :         :           : N              
+MATRIX_COL[1]                : 139       : output : TTL               :         :           : N              
 VCC_INT                      : 140       : power  :                   : 5.0V    :           :                
 GND*                         : 141       :        :                   :         :           :                
-GND*                         : 142       :        :                   :         :           :                
-GND*                         : 143       :        :                   :         :           :                
-GND*                         : 144       :        :                   :         :           :                
+DISP1[0]                     : 142       : output : TTL               :         :           : N              
+LED[13]                      : 143       : output : TTL               :         :           : N              
+RS232_RTS                    : 144       : output : TTL               :         :           : N              
 GND_INT                      : 145       : gnd    :                   :         :           :                
-GND*                         : 146       :        :                   :         :           :                
+MATRIX_ROW[0]                : 146       : output : TTL               :         :           : N              
 PS2_CLK                      : 147       : bidir  : TTL               :         :           : N              
-LED[13]                      : 148       : output : TTL               :         :           : N              
-MATRIX_COL[12]               : 149       : output : TTL               :         :           : N              
+LED[14]                      : 148       : output : TTL               :         :           : N              
+MATRIX_ROW[1]                : 149       : output : TTL               :         :           : N              
 VCC_INT                      : 150       : power  :                   : 5.0V    :           :                
-GND*                         : 151       :        :                   :         :           :                
-LED[1]                       : 152       : output : TTL               :         :           : N              
-FLEX_MOUSE_DATA              : 153       : bidir  : TTL               :         :           : N              
-DISP3_DP                     : 154       : output : TTL               :         :           : N              
+SW[4]                        : 151       : input  : TTL               :         :           : N              
+FLEX_DIGIT_2[0]              : 152       : output : TTL               :         :           : N              
+GND*                         : 153       :        :                   :         :           :                
+DISP1[6]                     : 154       : output : TTL               :         :           : N              
 GND_INT                      : 155       : gnd    :                   :         :           :                
 GND*                         : 156       :        :                   :         :           :                
-FLEX_DIGIT_1[4]              : 157       : output : TTL               :         :           : N              
-LED[12]                      : 158       : output : TTL               :         :           : N              
+SW[0]                        : 157       : input  : TTL               :         :           : N              
+FLEX_DIGIT_1[0]              : 158       : output : TTL               :         :           : N              
 GND*                         : 159       :        :                   :         :           :                
 VCC_INT                      : 160       : power  :                   : 5.0V    :           :                
-GND*                         : 161       :        :                   :         :           :                
-DISP3[6]                     : 162       : output : TTL               :         :           : N              
-FLEX_DIGIT_2[2]              : 163       : output : TTL               :         :           : N              
-DISP3[1]                     : 164       : output : TTL               :         :           : N              
+VGA_RED                      : 161       : output : TTL               :         :           : N              
+DISP2[0]                     : 162       : output : TTL               :         :           : N              
+GND*                         : 163       :        :                   :         :           :                
+GND*                         : 164       :        :                   :         :           :                
 GND_INT                      : 165       : gnd    :                   :         :           :                
-LED[2]                       : 166       : output : TTL               :         :           : N              
-GND*                         : 167       :        :                   :         :           :                
-DISP2[0]                     : 168       : output : TTL               :         :           : N              
-BT[1]                        : 169       : input  : TTL               :         :           : N              
+GND*                         : 166       :        :                   :         :           :                
+MATRIX_ROW[4]                : 167       : output : TTL               :         :           : N              
+LED[3]                       : 168       : output : TTL               :         :           : N              
+LED[0]                       : 169       : output : TTL               :         :           : N              
 VCC_INT                      : 170       : power  :                   : 5.0V    :           :                
-GND*                         : 171       :        :                   :         :           :                
-GND*                         : 172       :        :                   :         :           :                
+DISP4_DP                     : 171       : output : TTL               :         :           : N              
+FLEX_DIGIT_2[5]              : 172       : output : TTL               :         :           : N              
 MATRIX_COL[10]               : 173       : output : TTL               :         :           : N              
-GND*                         : 174       :        :                   :         :           :                
-DISP4[6]                     : 175       : output : TTL               :         :           : N              
+MATRIX_COL[8]                : 174       : output : TTL               :         :           : N              
+GND*                         : 175       :        :                   :         :           :                
 GND_INT                      : 176       : gnd    :                   :         :           :                
 TDI                          : 177       : input  :                   :         :           :                
 nCE                          : 178       : input  :                   :         :           :                
 DCLK                         : 179       : bidir  :                   :         :           :                
 DATA0                        : 180       : input  :                   :         :           :                
-MATRIX_COL[1]                : 181       : output : TTL               :         :           : N              
-MATRIX_COL[4]                : 182       : output : TTL               :         :           : N              
-FLEX_DIGIT_2[5]              : 183       : output : TTL               :         :           : N              
-FLEX_DIGIT_1[3]              : 184       : output : TTL               :         :           : N              
-GND*                         : 185       :        :                   :         :           :                
-LED[3]                       : 186       : output : TTL               :         :           : N              
-LED[8]                       : 187       : output : TTL               :         :           : N              
+GND*                         : 181       :        :                   :         :           :                
+DISP4[1]                     : 182       : output : TTL               :         :           : N              
+GND*                         : 183       :        :                   :         :           :                
+FLEX_MOUSE_DATA              : 184       : bidir  : TTL               :         :           : N              
+VGA_GREEN                    : 185       : output : TTL               :         :           : N              
+LED[15]                      : 186       : output : TTL               :         :           : N              
+GND*                         : 187       :        :                   :         :           :                
 GND*                         : 188       :        :                   :         :           :                
 VCC_INT                      : 189       : power  :                   : 5.0V    :           :                
-DISP4_DP                     : 190       : output : TTL               :         :           : N              
-GND*                         : 191       :        :                   :         :           :                
-SW[2]                        : 192       : input  : TTL               :         :           : N              
-FLEX_DIGIT_2[1]              : 193       : output : TTL               :         :           : N              
-GND*                         : 194       :        :                   :         :           :                
-FLEX_DIGIT_2[0]              : 195       : output : TTL               :         :           : N              
+GND*                         : 190       :        :                   :         :           :                
+DISP2[1]                     : 191       : output : TTL               :         :           : N              
+DISP2[5]                     : 192       : output : TTL               :         :           : N              
+BT[0]                        : 193       : input  : TTL               :         :           : N              
+FLEX_DIGIT_2_DP              : 194       : output : TTL               :         :           : N              
+FLEX_DIGIT_2[1]              : 195       : output : TTL               :         :           : N              
 GND*                         : 196       :        :                   :         :           :                
 GND_INT                      : 197       : gnd    :                   :         :           :                
-GND*                         : 198       :        :                   :         :           :                
-DISP4[5]                     : 199       : output : TTL               :         :           : N              
-FLEX_DIGIT_1[6]              : 200       : output : TTL               :         :           : N              
-FLEX_DIGIT_1[5]              : 201       : output : TTL               :         :           : N              
+MATRIX_COL[0]                : 198       : output : TTL               :         :           : N              
+LED[6]                       : 199       : output : TTL               :         :           : N              
+FLEX_DIGIT_1_DP              : 200       : output : TTL               :         :           : N              
+GND*                         : 201       :        :                   :         :           :                
 GND*                         : 202       :        :                   :         :           :                
-GND*                         : 203       :        :                   :         :           :                
-GND*                         : 204       :        :                   :         :           :                
+DISP3[4]                     : 203       : output : TTL               :         :           : N              
+RS232_TX                     : 204       : output : TTL               :         :           : N              
 VCC_INT                      : 205       : power  :                   : 5.0V    :           :                
-MATRIX_COL[0]                : 206       : output : TTL               :         :           : N              
-GND*                         : 207       :        :                   :         :           :                
-VGA_GREEN                    : 208       : output : TTL               :         :           : N              
-LED[5]                       : 209       : output : TTL               :         :           : N              
+GND*                         : 206       :        :                   :         :           :                
+FLEX_DIGIT_1[5]              : 207       : output : TTL               :         :           : N              
+SW[5]                        : 208       : input  : TTL               :         :           : N              
+DISP2[2]                     : 209       : output : TTL               :         :           : N              
 RS232_RX                     : 210       : input  : TTL               :         :           : N              
 GND+                         : 211       :        :                   :         :           :                
 RS232_CTS                    : 212       : input  : TTL               :         :           : N              
-MATRIX_COL[14]               : 213       : output : TTL               :         :           : N              
+GND*                         : 213       :        :                   :         :           :                
 GND*                         : 214       :        :                   :         :           :                
-LED[6]                       : 215       : output : TTL               :         :           : N              
+DISP1[5]                     : 215       : output : TTL               :         :           : N              
 GND_INT                      : 216       : gnd    :                   :         :           :                
 GND*                         : 217       :        :                   :         :           :                
-DISP2[3]                     : 218       : output : TTL               :         :           : N              
-DISP4[1]                     : 219       : output : TTL               :         :           : N              
-DISP2[1]                     : 220       : output : TTL               :         :           : N              
-FLEX_DIGIT_2[4]              : 221       : output : TTL               :         :           : N              
+GND*                         : 218       :        :                   :         :           :                
+GND*                         : 219       :        :                   :         :           :                
+DISP2[3]                     : 220       : output : TTL               :         :           : N              
+GND*                         : 221       :        :                   :         :           :                
 GND*                         : 222       :        :                   :         :           :                
-PS2_DATA                     : 223       : bidir  : TTL               :         :           : N              
+GND*                         : 223       :        :                   :         :           :                
 VCC_INT                      : 224       : power  :                   : 5.0V    :           :                
-LED[10]                      : 225       : output : TTL               :         :           : N              
-MATRIX_COL[15]               : 226       : output : TTL               :         :           : N              
-GND*                         : 227       :        :                   :         :           :                
-GND*                         : 228       :        :                   :         :           :                
-DISP2[2]                     : 229       : output : TTL               :         :           : N              
-GND*                         : 230       :        :                   :         :           :                
+LED[9]                       : 225       : output : TTL               :         :           : N              
+GND*                         : 226       :        :                   :         :           :                
+MATRIX_COL[9]                : 227       : output : TTL               :         :           : N              
+FLEX_DIGIT_1[3]              : 228       : output : TTL               :         :           : N              
+GND*                         : 229       :        :                   :         :           :                
+LED[8]                       : 230       : output : TTL               :         :           : N              
 GND*                         : 231       :        :                   :         :           :                
 GND_INT                      : 232       : gnd    :                   :         :           :                
 GND*                         : 233       :        :                   :         :           :                
-VGA_VSYNC                    : 234       : output : TTL               :         :           : N              
-GND*                         : 235       :        :                   :         :           :                
-GND*                         : 236       :        :                   :         :           :                
-MATRIX_ROW[7]                : 237       : output : TTL               :         :           : N              
-SW[4]                        : 238       : input  : TTL               :         :           : N              
+GND*                         : 234       :        :                   :         :           :                
+DISP4[2]                     : 235       : output : TTL               :         :           : N              
+SW[3]                        : 236       : input  : TTL               :         :           : N              
+GND*                         : 237       :        :                   :         :           :                
+MATRIX_COL[5]                : 238       : output : TTL               :         :           : N              
 GND*                         : 239       :        :                   :         :           :                
-GND*                         : 240       :        :                   :         :           :                
+DISP3[0]                     : 240       : output : TTL               :         :           : N              

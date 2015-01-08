@@ -30,7 +30,7 @@ ON
 # case_sensitive
 # source_file
 snake.v
-9783fe44ebd09a678becd16cf87adc4f
+c923ae456ed86114d1f4dfc93c22ef2
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -50,48 +50,6 @@ VERILOG_NON_CONSTANT_LOOP_LIMIT
 }
 # hierarchies {
 |
-}
-# macro_sequence
-
-# end
-# entity
-prescaler
-# storage
-db|snake.(1).cnf
-db|snake.(1).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-prescaler.v
-5116c65d0955b7c6c55cdc26eac27a
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# user_parameter {
-F_OSC
-25175000
-PARAMETER_SIGNED_DEC
-DEF
-}
-# hierarchies {
-prescaler:prescaler
 }
 # macro_sequence
 
