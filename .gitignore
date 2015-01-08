@@ -1,2 +1,5 @@
 db
 *.bak
+*.rpt
+*.summary
+*.done
