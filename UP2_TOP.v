@@ -1,38 +1,134 @@
-module snake(
-	input clk,
-	input update_clk,
-	output reg [7:0] row_out,
-	output reg [15:0] col_out
+module UP2_TOP
+(
+	MCLK,
+	
+	FLEX_DIGIT_1,
+	FLEX_DIGIT_1_DP,
+	FLEX_DIGIT_2,
+	FLEX_DIGIT_2_DP,
+	
+	FLEX_MOUSE_CLK,
+	FLEX_MOUSE_DATA,
+	
+	VGA_RED,
+	VGA_BLUE,
+	VGA_GREEN,
+	VGA_HSYNC,
+	VGA_VSYNC,
+	
+	LED,
+	SW,
+	BT,
+	
+	DISP1,
+	DISP1_DP,
+	DISP2,
+	DISP2_DP,
+	DISP3,
+	DISP3_DP,
+	DISP4,
+	DISP4_DP,
+	
+	PS2_DATA,
+	PS2_CLK,
+	
+	RS232_RX,
+	RS232_TX,
+	RS232_RTS,
+	RS232_CTS,
+	
+	MATRIX_ROW,
+	MATRIX_COL
 );
 
-reg [7:0] matrix [15:0];
-integer i;
+/*
+	==== interface description ====
+*/
 
-initial
-	for(i = 0; i < 7; i = i+1)
-		matrix[i] <= 0;
+input MCLK;	//main clock input
 
-always@(posedge update_clk)
-begin
-	if (counter == 0)
-	begin
-		MATRIX_ROW <= 8'b10111111;
-		MATRIX_COL <= 16'b1001111111111111;
-		counter <= 1;
-	end
-	else
-	begin
-		MATRIX_ROW <= 8'b11011111;
-		MATRIX_COL <= 16'b1000111111111111;
-		counter <= 0;
-	end
-end
+output [6:0] FLEX_DIGIT_1;
+output [6:0] FLEX_DIGIT_2;
+output FLEX_DIGIT_1_DP;
+output FLEX_DIGIT_2_DP;
 
-always@(posedge clk)
-	for(i = 0; i < 7; i = i+1)
-	begin
-		col_out[i] <= matrix[i];
-		row_out[i] <= 1;
-	end
+output VGA_RED;
+output VGA_GREEN;
+output VGA_BLUE;
+output VGA_HSYNC;
+output VGA_VSYNC;
+
+output [15:0] LED;
+input [7:0] SW;
+input [3:0] BT;
+
+output [6:0] DISP1;
+output DISP1_DP;
+output [6:0] DISP2;
+output DISP2_DP;
+output [6:0] DISP3;
+output DISP3_DP;
+output [6:0] DISP4;
+output DISP4_DP;
+
+inout PS2_DATA;
+inout PS2_CLK;
+inout FLEX_MOUSE_DATA;
+inout FLEX_MOUSE_CLK;
+
+input RS232_RX;
+output RS232_TX;
+output RS232_RTS;
+input RS232_CTS;
+
+output [7:0] MATRIX_ROW;
+output [15:0] MATRIX_COL;
+
+
+/*
+	==== functionality ====
+*/
+
+//let's save some energy
+assign FLEX_DIGIT_1 = 7'b1111111;
+assign FLEX_DIGIT_2 = 7'b1111111;
+assign FLEX_DIGIT_1_DP = 1;
+assign FLEX_DIGIT_2_DP = 1;
+//assign MATRIX_ROW = 8'hFF;
+//assign MATRIX_COL = 16'hFFFF;
+
+wire SLOWCLK;
+wire CLK;
+
+prescaler prescaler1 (
+	.clkIn(MCLK),
+	.clkOut(SLOWCLK)
+);
+defparam prescaler1.DIV = 2;
+
+prescaler prescaler2 (
+	.clkIn(MCLK),
+	.clkOut(CLK)
+);
+defparam prescaler2.DIV = 1024;
+
+//snakeCtrl ctrl (
+//	.clk(MCLK),
+//	.updateClk(CLK),
+//	.reset(SW[0]),
+//	.btnUp(BT[2]),
+//	.btnDown(BT[0]),
+//	.btnRight(BT[1]),
+//	.btnLeft(BT[3]),
+//	.MATRIX_COL(MATRIX_COL),
+//	.MATRIX_ROW(MATRIX_ROW)
+//	);
+	
+display disp2(
+.clk(CLK),
+.MATRIX_ROW(MATRIX_ROW),
+.MATRIX_COL(MATRIX_COL)
+);
 
 endmodule
+

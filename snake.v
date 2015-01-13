@@ -1,102 +1,56 @@
-module snake
-(
-	MCLK,
-	
-	FLEX_DIGIT_1,
-	FLEX_DIGIT_1_DP,
-	FLEX_DIGIT_2,
-	FLEX_DIGIT_2_DP,
-	
-	FLEX_MOUSE_CLK,
-	FLEX_MOUSE_DATA,
-	
-	VGA_RED,
-	VGA_BLUE,
-	VGA_GREEN,
-	VGA_HSYNC,
-	VGA_VSYNC,
-	
-	LED,
-	SW,
-	BT,
-	
-	DISP1,
-	DISP1_DP,
-	DISP2,
-	DISP2_DP,
-	DISP3,
-	DISP3_DP,
-	DISP4,
-	DISP4_DP,
-	
-	PS2_DATA,
-	PS2_CLK,
-	
-	RS232_RX,
-	RS232_TX,
-	RS232_RTS,
-	RS232_CTS,
-	
-	MATRIX_ROW,
-	MATRIX_COL
+module snake(
+	input clk,
+	input update_clk,
+	output reg [7:0] output_row,
+	output reg [15:0] output_col
 );
 
-/*
-	==== interface description ====
-*/
+wire [15:0] matrix [7:0];
+assign matrix[0] = 16'b1111111111111110;
+assign matrix[1] = 16'b1111111111111101;
+assign matrix[2] = 16'b1111111111111011;
+assign matrix[3] = 16'b1111111111110111;
+assign matrix[4] = 16'b1111111111101111;
+assign matrix[5] = 16'b1111111111011111;
+assign matrix[6] = 16'b1111111110111111;
+assign matrix[7] = 16'b1111111001111111;
 
-input MCLK;	//main clock input
-
-output [6:0] FLEX_DIGIT_1;
-output [6:0] FLEX_DIGIT_2;
-output FLEX_DIGIT_1_DP;
-output FLEX_DIGIT_2_DP;
-
-output VGA_RED;
-output VGA_GREEN;
-output VGA_BLUE;
-output VGA_HSYNC;
-output VGA_VSYNC;
-
-output [15:0] LED;
-input [7:0] SW;
-input [3:0] BT;
-
-output [6:0] DISP1;
-output DISP1_DP;
-output [6:0] DISP2;
-output DISP2_DP;
-output [6:0] DISP3;
-output DISP3_DP;
-output [6:0] DISP4;
-output DISP4_DP;
-
-inout PS2_DATA;
-inout PS2_CLK;
-inout FLEX_MOUSE_DATA;
-inout FLEX_MOUSE_CLK;
-
-input RS232_RX;
-output RS232_TX;
-output RS232_RTS;
-input RS232_CTS;
-
-output [7:0] MATRIX_ROW;
-output [15:0] MATRIX_COL;
+wire [7:0] row;
+wire [2:0] c;
+wire [32:0] length;
+loop loop1(
+	.clk(update_clk),
+	.counter(c)
+);
 
 
-/*
-	==== functionality ====
-*/
+display disp1(
+	.num(c),
+	.row(row)
+);
 
-//let's save some energy
-assign FLEX_DIGIT_1 = 7'b1111111;
-assign FLEX_DIGIT_2 = 7'b1111111;
-assign FLEX_DIGIT_1_DP = 1;
-assign FLEX_DIGIT_2_DP = 1;
-//assign MATRIX_ROW = 8'hFF;
-//assign MATRIX_COL = 16'hFFFF;
+always@(update_clk)
+begin
+	output_col <= matrix[c];
+	output_row <= row;
+end
+
+/*always@(posedge update_clk)
+begin
+	if (counter == 0)
+	begin
+		output <= 8'b10111111;
+		MATRIX_COL <= 16'b1001111111111111;
+		counter <= 1;
+	end
+	else
+	begin
+		MATRIX_ROW <= 8'b11011111;
+		MATRIX_COL <= 16'b1000111111111111;
+		counter <= 0;
+	end
+end*/
+
 
 
 endmodule
-

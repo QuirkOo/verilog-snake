@@ -4,6 +4,8 @@ module prescaler (
 
 );
 parameter F_OSC = 25175000;
+parameter DIV = 1;
+parameter DELAY = F_OSC/DIV;
 
 reg [31:0] counter;
 
@@ -28,13 +30,13 @@ always@(posedge clkin)
 	
 */	
 always @(posedge clkIn)
-	if (counter < F_OSC/2)
+	if (counter < DELAY/2)
 		clkOut <= 1;
 	else
 		clkOut <= 0;
 
 always @(posedge clkIn)
-	if (counter < (F_OSC-1))
+	if (counter < (DELAY-1))
 		counter <= counter+1;
 	else
 		counter <= 0;

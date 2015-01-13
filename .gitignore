@@ -1,5 +1,8 @@
-db
-*.bak
-*.rpt
-*.summary
-*.done
+*
+
+!*.v
+!.gitignore
+!UP2_TOP.dpf
+!UP2_TOP.qpf
+!UP2_TOP.qsf
+!UP2_TOP.qws
