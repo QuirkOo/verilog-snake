@@ -1,6 +1,7 @@
 module snakeMove (
 	input clk,
 	input reset,
+	input lock,
 	input btnUp,
 	input btnDown,
 	input btnLeft,
@@ -26,7 +27,7 @@ always @(posedge clk or negedge reset) begin
 		y <= 0;
 		@(posedge clk);
 	end
-	else begin
+	else if (lock == 0) begin
 		case (dir)
 			4'b0001: x <= x + 1;
 			4'b0010: y <= y + 1;

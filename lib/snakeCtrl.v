@@ -8,8 +8,8 @@ module snakeCtrl (
 	input btnRight,
 	input [3:0] foodX,
 	input [3:0] foodY,
-	output [7:0] MATRIX_ROW,
-	output [15:0] MATRIX_COL
+	output reg [7:0] MATRIX_ROW,
+	output reg [15:0] MATRIX_COL
 );
 
 wire [3:0] x, y;
@@ -19,9 +19,16 @@ wire [7:0] foodPos = {foodX, foodY};
 
 reg req;
 
+reg lock;
+
+initial begin
+	lock <= 1;
+end
+
 snakeMove move (
 	.clk(updateClk),
 	.reset(reset),
+	.lock(lock),
 	.btnUp(btnUp),
 	.btnDown(btnDown),
 	.btnLeft(btnLeft),
@@ -38,7 +45,7 @@ fifo body (
 	.rdreq(req)
 );
 
-display disp1 (
+display disp (
 	.clk(clk),
 	.pos(pos),
 	.tailPos(tailPos),
