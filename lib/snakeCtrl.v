@@ -5,16 +5,15 @@ module snakeCtrl (
 	input btnDown,
 	input btnLeft,
 	input btnRight,
-	input [3:0] foodX,
-	input [3:0] foodY,
 	output reg [7:0] MATRIX_ROW,
 	output reg [15:0] MATRIX_COL
 );
 
-wire [3:0] x, y;
-wire [7:0] pos = {x, y};
-wire [7:0] tailPos;
-wire [7:0] foodPos = {foodX, foodY};
+reg [8*15:0] pixelRow;
+reg [15:0] temp;
+reg [3:0] x, y;
+reg [7:0] pos = {x, y};
+reg [7:0] tailPos;
 
 reg req;
 reg lock = 0;
@@ -68,11 +67,32 @@ pulseGen pulse (
 	.pulseOut(req)
 );
 
+reg [3:0] foodX,
+reg [3:0] foodY,
+reg [7:0] foodPos = {foodX, foodY};
+
+randomizer food (
+	.clk(updateClk),
+	.x(foodX),
+	.y(foodY)
+);
+
 initial begin
 	pos <= 8'b00000000;
-	@(posedge clk) pos <= 8b'00000001;
-	@(posedge clk) pos <= 8b'00000010;
+	@(posedge clk) pos <= 8'b00000001;
+	@(posedge clk) pos <= 8'b00000010;
 	@(posedge clk) lock <= 1;
+end
+
+always @(tailPos or pos) begin
+	temp = pixelRow[tailPos[7:4]];
+	temp[tailPos[3:0]] = 0;
+	pixelRow[tailPos[7:4]] = temp;
+
+	
+	temp = pixelRow[pos[7:4]];
+	temp[pos[3:0]] = 0;
+	pixelRow[pos[7:4]] = temp;
 end
 
 endmodule
