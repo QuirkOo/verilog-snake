@@ -17,12 +17,7 @@ wire [7:0] tailPos;
 wire [7:0] foodPos = {foodX, foodY};
 
 reg req;
-
-reg lock;
-
-initial begin
-	lock <= 0;
-end
+reg lock = 0;
 
 wire updateClk;
 wire displayClk;
@@ -60,7 +55,7 @@ fifo body (
 );
 
 display disp (
-	.clk(clk),
+	.clk(displayClk),
 	.pos(pos),
 	.tailPos(tailPos),
 	.MATRIX_ROW(MATRIX_ROW),
@@ -72,5 +67,12 @@ pulseGen pulse (
 	.trigger(pos),
 	.pulseOut(req)
 );
+
+initial begin
+	pos <= 8'b00000000;
+	@(posedge clk) pos <= 8b'00000001;
+	@(posedge clk) pos <= 8b'00000010;
+	@(posedge clk) lock <= 1;
+end
 
 endmodule
