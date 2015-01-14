@@ -22,7 +22,7 @@ reg req;
 reg lock;
 
 initial begin
-	lock <= 1;
+	lock <= 0;
 end
 
 snakeMove move (

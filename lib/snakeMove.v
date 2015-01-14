@@ -27,7 +27,7 @@ always @(posedge clk or negedge reset) begin
 		y <= 0;
 		@(posedge clk);
 	end
-	else if (lock == 0) begin
+	else if (lock == 1) begin
 		case (dir)
 			4'b0001: x <= x + 1;
 			4'b0010: y <= y + 1;
