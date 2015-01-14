@@ -114,7 +114,6 @@ defparam prescaler2.DIV = 1024;
 
 //snakeCtrl ctrl (
 //	.clk(MCLK),
-//	.updateClk(CLK),
 //	.reset(SW[0]),
 //	.btnUp(BT[2]),
 //	.btnDown(BT[0]),

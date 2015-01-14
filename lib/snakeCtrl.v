@@ -1,6 +1,5 @@
 module snakeCtrl (
 	input clk,
-	input updateClk,
 	input reset,
 	input btnUp,
 	input btnDown,
@@ -24,6 +23,21 @@ reg lock;
 initial begin
 	lock <= 0;
 end
+
+wire updateClk;
+wire displayClk;
+
+prescaler prescaler1 (
+	.clkIn(clk),
+	.clkOut(updateClk)
+);
+defparam prescaler1.DIV = 2;
+
+prescaler prescaler2 (
+	.clkIn(clk),
+	.clkOut(displayClk)
+);
+defparam prescaler2.DIV = 1024;
 
 snakeMove move (
 	.clk(updateClk),
@@ -53,9 +67,10 @@ display disp (
 	.MATRIX_COL(MATRIX_COL)
 );
 
-always @(pos) begin 
-	req = 1;
-	req = 0;
-end
+pulseGen pulse (
+	.clk(clk),
+	.trigger(pos),
+	.pulseOut(req)
+);
 
 endmodule
