@@ -11,8 +11,7 @@ reg [2:0] i = 0;
 reg [8*15:0] pixelRow;
 reg [15:0] temp;
 
-initial
-	pixelRow[15:0] <= 16'b1010101010101010;
+reg [3:0] x, y;
 
 always @(posedge clk) begin
 	case (i)
@@ -26,19 +25,23 @@ always @(posedge clk) begin
 		3'b000: MATRIX_ROW <= 8'b01111111;
 	endcase
 		
-	MATRIX_COL <= pixelRow[15:0];
+	MATRIX_COL[15:0] <= pixelRow[15:0];
 	i = i + 1;
 	
 end
 
 always @(tailPos or pos) begin
-	temp = pixelRow[tailPos[7:4]];
-	temp[tailPos[3:0]] = 1;
-	pixelRow[tailPos[7:4]] = temp;
+	x[3:0] <= tailPos[7:4];
+	y[3:0] <= tailPos[3:0];
+	temp = pixelRow[x];
+	temp[y] = 1;
+	pixelRow[x] = temp;
 	
-	temp = pixelRow[pos[7:4]];
-	temp[pos[3:0]] = 0;
-	pixelRow[pos[7:4]] = temp;
+	x[3:0] <= pos[7:4];
+	y[3:0] <= pos[3:0];
+	temp = pixelRow[x];
+	temp[y] = 0;
+	pixelRow[x] = temp;
 end
 
 endmodule
