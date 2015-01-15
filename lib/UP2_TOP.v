@@ -112,22 +112,32 @@ prescaler prescaler2 (
 );
 defparam prescaler2.DIV = 1024;
 
-//snakeCtrl ctrl (
-//	.clk(MCLK),
-//	.reset(SW[0]),
-//	.btnUp(BT[2]),
-//	.btnDown(BT[0]),
-//	.btnRight(BT[1]),
-//	.btnLeft(BT[3]),
-//	.MATRIX_COL(MATRIX_COL),
-//	.MATRIX_ROW(MATRIX_ROW)
-//	);
+
 	
 display disp2(
 .clk(CLK),
 .MATRIX_ROW(MATRIX_ROW),
 .MATRIX_COL(MATRIX_COL)
 );
+
+wire btnUp, btnDown, btnLeft, btnRight;
+wire buttons = {btnLeft, btnUp, btnRight, btnDown};
+
+controlDebouncer debouncer (
+	.clk(MCLK),
+	.buttonsIn(BT),
+	.buttonsOut(buttons)
+
+//snakeCtrl ctrl (
+//	.clk(MCLK),
+//	.reset(SW[0]),
+//	.btnUp(btnUp),
+//	.btnDown(btnDown),
+//	.btnRight(btnRight),
+//	.btnLeft(btnLeft),
+//	.MATRIX_COL(MATRIX_COL),
+//	.MATRIX_ROW(MATRIX_ROW)
+//	);
 
 endmodule
 
