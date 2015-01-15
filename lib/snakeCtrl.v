@@ -1,6 +1,7 @@
 module snakeCtrl (
 	input clk,
 	input reset,
+	input init,
 	input btnUp,
 	input btnDown,
 	input btnLeft,
