@@ -174,3 +174,4 @@ set_global_assignment -name VERILOG_FILE lib/snakeMove.v
 set_global_assignment -name VERILOG_FILE lib/UP2_TOP.v
 set_global_assignment -name VERILOG_FILE lib/pulseGen.v
 set_global_assignment -name VERILOG_FILE lib/pixelGen.v
+set_global_assignment -name VERILOG_FILE lib/controlDebouncer.v

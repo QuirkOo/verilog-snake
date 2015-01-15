@@ -7,32 +7,22 @@ module pixelGen (
 );
 
 reg [15:0] temp;
-reg [3:0] x;
-reg [3:0] y;
 
-always @(tailPos) begin
-	x <= tailPos[7:4];
-	y <= tailPos[3:0];
-	
+always @(tailPos or pos) begin
+	if (pos == foodPos)
+		grow = 1;
+		
+	temp = pixelReg[pos[7:4]];
+	temp[pos[3:0]] = 0;
+	pixelReg[pos[7:4]] = temp;
+
 	if (!grow) begin
-		temp = pixelReg[x];
-		temp[y] = 0;
-		pixelReg[x] = temp;
+		temp = pixelReg[tailPos[7:4]];
+		temp[tailPos[3:0]] = 0;
+		pixelReg[tailPos[7:4]] = temp;
 	end
 	else
-		grow <= 0;
-end
-	
-always @(pos) begin
-	if (pos == foodPos)
-		grow <= 1;
-		
-	x <= pos[7:4];
-	y <= pos[3:0];	
-
-	temp = pixelReg[x];
-	temp[y] = 0;
-	pixelReg[x] = temp;
+		grow = 0;
 end
 
 endmodule

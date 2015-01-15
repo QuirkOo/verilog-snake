@@ -27,3 +27,5 @@ debouncer db3 (
 	.btn(buttonsIn[3]),
 	.on(buttonsOut[3])
 );
+
+endmodule

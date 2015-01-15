@@ -5,14 +5,14 @@ module snakeCtrl (
 	input btnDown,
 	input btnLeft,
 	input btnRight,
-	output reg [7:0] MATRIX_ROW,
-	output reg [15:0] MATRIX_COL
+	output [7:0] MATRIX_ROW,
+	output [15:0] MATRIX_COL
 );
 
-reg [8*15:0] pixelReg;
-reg [3:0] x, y;
-reg [7:0] pos = {x, y};
-reg [7:0] tailPos;
+wire [8*15:0] pixelReg;
+wire [3:0] x, y;
+wire [7:0] pos = {x, y};
+wire [7:0] tailPos;
 
 wire wrreq;
 wire rdreq;
@@ -57,7 +57,7 @@ fifo body (
 
 display disp (
 	.clk(displayClk),
-	.pixelReg(pixelReg)
+	.pixelReg(pixelReg),
 	.MATRIX_ROW(MATRIX_ROW),
 	.MATRIX_COL(MATRIX_COL)
 );
@@ -68,10 +68,10 @@ pulseGen pulse (
 	.pulseOut(wrreq)
 );
 
-reg [3:0] foodX;
-reg [3:0] foodY;
-reg [7:0] foodPos = {foodX, foodY};
-reg foodReq;
+wire [3:0] foodX;
+wire [3:0] foodY;
+wire [7:0] foodPos = {foodX, foodY};
+wire foodReq;
 
 randomizer food (
 	.clk(updateClk),
@@ -87,12 +87,5 @@ pixelGen pixel (
 	.pixelReg(pixelReg),
 	.grow(foodReq)
 );
-
-initial begin
-	pos <= 8'b00000000;
-	@(posedge clk) pos <= 8'b00000001;
-	@(posedge clk) pos <= 8'b00000010;
-	@(posedge clk) lock <= 1;
-end
 
 endmodule
