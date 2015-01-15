@@ -15,7 +15,10 @@ reg [3:0] x, y;
 reg [7:0] pos = {x, y};
 reg [7:0] tailPos;
 
-reg req;
+wire wrreq;
+wire rdreq;
+assign rdreq = wrreq;
+
 reg lock = 0;
 
 wire updateClk;
@@ -48,9 +51,9 @@ snakeMove move (
 fifo body (
 	.aclr(reset),
 	.data(pos),
-	.wrreq(req),
+	.wrreq(wrreq),
 	.q(tailPos),
-	.rdreq(req)
+	.rdreq(rdreq)
 );
 
 display disp (
@@ -64,12 +67,13 @@ display disp (
 pulseGen pulse (
 	.clk(clk),
 	.trigger(pos),
-	.pulseOut(req)
+	.pulseOut(wrreq)
 );
 
-reg [3:0] foodX,
-reg [3:0] foodY,
+reg [3:0] foodX;
+reg [3:0] foodY;
 reg [7:0] foodPos = {foodX, foodY};
+reg grow = 0;
 
 randomizer food (
 	.clk(updateClk),
@@ -84,12 +88,18 @@ initial begin
 	@(posedge clk) lock <= 1;
 end
 
-always @(tailPos or pos) begin
-	temp = pixelRow[tailPos[7:4]];
-	temp[tailPos[3:0]] = 0;
-	pixelRow[tailPos[7:4]] = temp;
-
+always @(tailPos) begin
+	if (!grow) begin
+		temp = pixelRow[tailPos[7:4]];
+		temp[tailPos[3:0]] = 0;
+		pixelRow[tailPos[7:4]] = temp;
+	end
+end
 	
+always @(pos) begin
+	if (pos == foodPos)
+		grow <= 1;
+
 	temp = pixelRow[pos[7:4]];
 	temp[pos[3:0]] = 0;
 	pixelRow[pos[7:4]] = temp;
