@@ -161,7 +161,6 @@ set_location_assignment PIN_236 -to VGA_RED
 set_location_assignment PIN_239 -to VGA_VSYNC
 set_location_assignment PIN_30 -to FLEX_MOUSE_CLK
 set_location_assignment PIN_31 -to FLEX_MOUSE_DATA
-set_global_assignment -name USE_CONFIGURATION_DEVICE ON
 set_global_assignment -name RESERVE_ALL_UNUSED_PINS "AS INPUT TRI-STATED"
 set_global_assignment -name RESERVE_ALL_UNUSED_PINS_NO_OUTPUT_GND "AS INPUT TRI-STATED"
 set_global_assignment -name MISC_FILE "D:/Beatka/AGH/TC/verilog-snake/UP2_TOP.dpf"
@@ -174,3 +173,4 @@ set_global_assignment -name VERILOG_FILE lib/snakeCtrl.v
 set_global_assignment -name VERILOG_FILE lib/snakeMove.v
 set_global_assignment -name VERILOG_FILE lib/UP2_TOP.v
 set_global_assignment -name VERILOG_FILE lib/pulseGen.v
+set_global_assignment -name VERILOG_FILE lib/pixelGen.v
