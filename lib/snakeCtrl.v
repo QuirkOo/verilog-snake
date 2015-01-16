@@ -26,17 +26,15 @@ assign rdreq = wrreq;
 wire updateClk;
 wire displayClk;
 
-prescaler prescaler1 (
+prescaler #(2) prescaler1 (
 	.clkIn(clk),
 	.clkOut(updateClk)
 );
-defparam prescaler1.DIV = 2;
 
-prescaler prescaler2 (
+prescaler #(1024) prescaler2 (
 	.clkIn(clk),
 	.clkOut(displayClk)
 );
-defparam prescaler2.DIV = 1024;
 
 snakeMove move (
 	.clk(updateClk),
