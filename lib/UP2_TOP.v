@@ -97,6 +97,7 @@ assign FLEX_DIGIT_2_DP = 1;
 //assign MATRIX_ROW = 8'hFF;
 //assign MATRIX_COL = 16'hFFFF;
 
+/*
 wire SLOWCLK;
 wire CLK;
 
@@ -112,12 +113,24 @@ prescaler prescaler2 (
 );
 defparam prescaler2.DIV = 1024;
 
-/*
+wire [8*16:0] a;
+assign a[15:0] = 16'b1010101010101010;
+assign a[31:16] = 16'b1100110011001100;
+assign a[47:32] = 16'b1111111111111110;
+assign a[63:48] = 16'hFFFF;
+assign a[79:64] = 16'hFFFF;
+assign a[95:80] = 16'hFFFF;
+assign a[111:96] = 16'hFFFF;
+assign a[127:112] = 16'hFFFF;
+	
 display disp2(
 .clk(CLK),
+.pixelReg(a),
 .MATRIX_ROW(MATRIX_ROW),
 .MATRIX_COL(MATRIX_COL)
-);*/
+);
+*/
+
 
 wire btnUp, btnDown, btnLeft, btnRight;
 wire buttons = {btnLeft, btnUp, btnRight, btnDown};
@@ -128,9 +141,13 @@ controlDebouncer debouncer (
 	.buttonsOut(buttons)
 );
 
+assign LED[0] = SW[0];
+assign LED[1] = SW[1];
+
 snakeCtrl ctrl (
 	.clk(MCLK),
 	.reset(SW[0]),
+	.init(SW[1]),
 	.btnUp(btnUp),
 	.btnDown(btnDown),
 	.btnRight(btnRight),

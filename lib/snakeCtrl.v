@@ -10,9 +10,10 @@ module snakeCtrl (
 	output [15:0] MATRIX_COL
 );
 
-wire [8*15:0] pixelReg;
+wire [8*16-1:0] pixelReg;
 wire [3:0] x, y;
-wire [7:0] pos = {x, y};
+wire [7:0] pos;
+assign pos = {x, y};
 wire [7:0] tailPos;
 
 wire wrreq;
@@ -49,6 +50,7 @@ snakeMove move (
 );
 
 fifo body (
+	.clock(clk),
 	.aclr(reset),
 	.data(pos),
 	.wrreq(wrreq),
@@ -63,10 +65,16 @@ display disp (
 	.MATRIX_COL(MATRIX_COL)
 );
 
-pulseGen pulse (
+pulseGen pulse1 (
 	.clk(clk),
 	.trigger(pos),
 	.pulseOut(wrreq)
+);
+
+pulseGen pulse2 (
+	.clk(clk),
+	.trigger(tailPos),
+	.pulseOut(genreq)
 );
 
 wire [3:0] foodX;
@@ -82,10 +90,12 @@ randomizer food (
 );
 
 pixelGen pixel (
+	.genreq(updateClk),
 	.pos(pos),
 	.tailPos(tailPos),
 	.foodPos(foodPos),
 	.pixelReg(pixelReg),
+	.init(init),
 	.grow(foodReq)
 );
 

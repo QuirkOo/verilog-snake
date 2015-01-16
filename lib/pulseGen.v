@@ -18,13 +18,13 @@ end
 
 always @(posedge clk or posedge enable) begin
 	if (enable) begin
-			pulseOut <= 1;
-			counter <= 0;
+		pulseOut <= 1;
+		counter <= 0;
 	end
 	else begin
 		if (counter < (PULSE_WIDTH-1))
 			counter <= counter+1;
-		else
+		else 
 			pulseOut <= 0;
 	end
 end
