@@ -144,10 +144,12 @@ controlDebouncer debouncer (
 assign LED[0] = SW[0];
 assign LED[1] = SW[1];
 
+wire startGame;
+assign startGame = SW[0];
+
 snakeCtrl ctrl (
 	.clk(MCLK),
-	.reset(SW[0]),
-	.init(SW[1]),
+	.start(startGame),
 	.btnUp(btnUp),
 	.btnDown(btnDown),
 	.btnRight(btnRight),

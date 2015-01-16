@@ -1,7 +1,6 @@
 module snakeCtrl (
 	input clk,
-	input reset,
-	input init,
+	input start,
 	input btnUp,
 	input btnDown,
 	input btnLeft,
@@ -10,17 +9,19 @@ module snakeCtrl (
 	output [15:0] MATRIX_COL
 );
 
+wire lock;
+assign lock = ~start;
+
 wire [8*16-1:0] pixelReg;
 wire [3:0] x, y;
-wire [7:0] pos;
-assign pos = {x, y};
+wire [7:0] pos = {x, y};
 wire [7:0] tailPos;
 
 wire wrreq;
 wire rdreq;
 assign rdreq = wrreq;
 
-reg lock = 0;
+
 
 wire updateClk;
 wire displayClk;
