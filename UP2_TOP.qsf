@@ -175,3 +175,4 @@ set_global_assignment -name VERILOG_FILE lib/pulseGen.v
 set_global_assignment -name VERILOG_FILE lib/pixelGen.v
 set_global_assignment -name VERILOG_FILE lib/controlDebouncer.v
 set_global_assignment -name VERILOG_FILE lib/fifo.v
+set_global_assignment -name VERILOG_FILE lib/clkSetup.v
