@@ -1,25 +1,39 @@
 module fifo (
 	input clk,
-	input aclr,
+	input aclr,	// Asynchronous clear
+	input rdenable,	// Read enable
+	input wrenable,	// Write enable
 	input [7:0] datain,
 	output reg [7:0] dataout
 );
 
 parameter MEM_WIDTH = 7;
 parameter MEM_SIZE = (1 << MEM_WIDTH);
+
+parameter INITIAL_VALUE_SIZE = 0;
+parameter INITIAL_VALUE = 0;
+
 reg [7:0] mem[MEM_SIZE-1:0];
 reg [MEM_WIDTH-1:0] rdptr, wrptr; 
 
 always @(posedge clk or posedge aclr) begin
 	if (aclr) begin
+		mem[0] = 8'b00000000;
+		mem[1] = 8'b00000001;
+		mem[2] = 8'b00000010;
 		rdptr <= 0;
-		wrptr <= 0;
+		wrptr <= 3;
 	end
 	else begin
-		dataout = mem[rdptr];
-		mem[wrptr] = datain;
-		rdptr <= rdptr +1;
-		wrptr <= wrptr +1;
+		if (rdenable) begin
+			dataout <= mem[rdptr];
+			rdptr <= rdptr +1;
+			
+			if (wrenable) begin
+				mem[wrptr] <= datain;			
+				wrptr <= wrptr +1;
+			end
+		end
 	end
 end
 

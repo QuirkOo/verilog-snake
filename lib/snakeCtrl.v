@@ -13,22 +13,31 @@ wire lock;
 assign lock = ~start;
 
 wire [8*16-1:0] pixelReg;
+
+wire displayClk;
+wire updateClk;
+clkSetup setup (clk, displayClk, updateClk);
+
 wire [3:0] x, y;
 wire [7:0] pos = {x, y};
 wire [7:0] tailPos;
 
-wire updateClk;
-wire displayClk;
+wire rdenable, wrenable;
+assign rdenable = 1;
+assign wrenable = 1;
 
-prescaler #(2) prescaler1 (
-	.clkIn(clk),
-	.clkOut(updateClk)
+fifo body (
+	.clk(updateClk),
+	.aclr(start),
+	.rdenable(rdenable),
+	.wrenable(wrenable),
+	.datain(pos),
+	.dataout(tailPos)
 );
 
-prescaler #(1024) prescaler2 (
-	.clkIn(clk),
-	.clkOut(displayClk)
-);
+
+
+
 
 snakeMove move (
 	.clk(updateClk),
