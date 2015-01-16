@@ -17,12 +17,6 @@ wire [3:0] x, y;
 wire [7:0] pos = {x, y};
 wire [7:0] tailPos;
 
-wire wrreq;
-wire rdreq;
-assign rdreq = wrreq;
-
-
-
 wire updateClk;
 wire displayClk;
 
@@ -48,15 +42,6 @@ snakeMove move (
 	.btnRight(btnRight),
 	.x(x),
 	.y(y)
-);
-
-fifo body (
-	.clock(clk),
-	.aclr(reset),
-	.data(pos),
-	.wrreq(wrreq),
-	.q(tailPos),
-	.rdreq(rdreq)
 );
 
 display disp (

@@ -166,7 +166,6 @@ set_global_assignment -name RESERVE_ALL_UNUSED_PINS_NO_OUTPUT_GND "AS INPUT TRI-
 set_global_assignment -name MISC_FILE "D:/Beatka/AGH/TC/verilog-snake/UP2_TOP.dpf"
 set_global_assignment -name VERILOG_FILE lib/debouncer.v
 set_global_assignment -name VERILOG_FILE lib/display.v
-set_global_assignment -name VERILOG_FILE lib/fifo.v
 set_global_assignment -name VERILOG_FILE lib/prescaler.v
 set_global_assignment -name VERILOG_FILE lib/randomizer.v
 set_global_assignment -name VERILOG_FILE lib/snakeCtrl.v
@@ -175,3 +174,4 @@ set_global_assignment -name VERILOG_FILE lib/UP2_TOP.v
 set_global_assignment -name VERILOG_FILE lib/pulseGen.v
 set_global_assignment -name VERILOG_FILE lib/pixelGen.v
 set_global_assignment -name VERILOG_FILE lib/controlDebouncer.v
+set_global_assignment -name VERILOG_FILE lib/fifo.v
