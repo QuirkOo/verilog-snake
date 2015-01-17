@@ -1,4 +1,4 @@
-module clkSetup (
+module clk_setup (
 	input clk,
 	output displayClk,
 	output updateClk

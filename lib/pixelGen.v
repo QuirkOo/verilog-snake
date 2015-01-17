@@ -1,4 +1,4 @@
-module pixelGen (
+module pixel_gen (
 	input genreq,
 	input [7:0] pos,
 	input [7:0] tailPos,

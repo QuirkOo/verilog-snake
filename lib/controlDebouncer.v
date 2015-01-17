@@ -1,4 +1,4 @@
-module controlDebouncer (
+module control_debouncer (
 	input clk,
 	input [3:0] buttonsIn,
 	output [3:0] buttonsOut

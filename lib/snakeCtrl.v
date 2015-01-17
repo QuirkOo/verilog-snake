@@ -1,4 +1,4 @@
-module snakeCtrl (
+module snake_ctrl (
 	input clk,
 	input start,
 	input btnUp,
@@ -16,7 +16,7 @@ wire [8*16-1:0] pixelReg;
 
 wire displayClk;
 wire updateClk;
-clkSetup setup (clk, displayClk, updateClk);
+clk_setup setup (clk, displayClk, updateClk);
 
 wire [3:0] x, y;
 wire [7:0] pos = {x, y};
@@ -35,13 +35,9 @@ fifo body (
 	.dataout(tailPos)
 );
 
-
-
-
-
-snakeMove move (
+snake_mover move (
 	.clk(updateClk),
-	.reset(reset),
+	.reset(~start),
 	.lock(lock),
 	.btnUp(btnUp),
 	.btnDown(btnDown),
@@ -52,22 +48,11 @@ snakeMove move (
 );
 
 display disp (
+	.aclr(~start),
 	.clk(displayClk),
 	.pixelReg(pixelReg),
 	.MATRIX_ROW(MATRIX_ROW),
 	.MATRIX_COL(MATRIX_COL)
-);
-
-pulseGen pulse1 (
-	.clk(clk),
-	.trigger(pos),
-	.pulseOut(wrreq)
-);
-
-pulseGen pulse2 (
-	.clk(clk),
-	.trigger(tailPos),
-	.pulseOut(genreq)
 );
 
 wire [3:0] foodX;
@@ -82,13 +67,13 @@ randomizer food (
 	.req(foodReq)
 );
 
-pixelGen pixel (
+pixel_gen pixel (
 	.genreq(updateClk),
 	.pos(pos),
 	.tailPos(tailPos),
 	.foodPos(foodPos),
 	.pixelReg(pixelReg),
-	.init(init),
+	.init(~start),
 	.grow(foodReq)
 );
 
