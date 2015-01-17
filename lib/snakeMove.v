@@ -1,4 +1,4 @@
-module snakeMove (
+module snake_mover (
 	input clk,
 	input reset,
 	input lock,
@@ -21,13 +21,13 @@ always @(buttons) begin
 		dir <= buttons;
 end
 
-always @(posedge clk or negedge reset) begin
-	if (reset == 0) begin
+always @(posedge clk or posedge reset) begin
+	if (reset) begin
 		x <= 0;
 		y <= 0;
 		@(posedge clk);
 	end
-	else if (lock == 1) begin
+	else if (!lock) begin
 		case (dir)
 			4'b0001: x <= x + 1;
 			4'b0010: y <= y + 1;
