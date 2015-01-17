@@ -131,11 +131,10 @@ display disp2(
 );
 */
 
-
 wire btnUp, btnDown, btnLeft, btnRight;
 wire buttons = {btnLeft, btnUp, btnRight, btnDown};
 
-controlDebouncer debouncer (
+control_debouncer debouncer (
 	.clk(MCLK),
 	.buttonsIn(BT),
 	.buttonsOut(buttons)
@@ -147,7 +146,7 @@ assign LED[1] = SW[1];
 wire startGame;
 assign startGame = SW[0];
 
-snakeCtrl ctrl (
+snake_ctrl ctrl (
 	.clk(MCLK),
 	.start(startGame),
 	.btnUp(btnUp),
